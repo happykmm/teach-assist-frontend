@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1451053702_1666737.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1451053702_1666737.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1451053702_1666737.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1451053702_1666737.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1451053702_1666737.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+/* transparent mask */
+login {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+
+login > .wrap {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -175px;
+    margin-top: -200px;
+    z-index: 1000;
+    background: #ffffff;
+}
+
+login > .wrap > header {
+    display: block;
+    text-align: right;
+    cursor: move;
+}
+
+
+login > .wrap > header > i {
+    font-family: 'iconfont';
+    font-style: normal;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+login > .wrap > header > i:hover {
+    background: #eee;
+}
+
+
+login > .wrap > main {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 35px;
+    padding-top: 91px;
+    padding-bottom: 35px;
+}
+
+login > .wrap > main > .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: 90px;
+    background: url("http://7xpijn.com1.z0.glb.clouddn.com/beforelogin.gif");
+}
+
+
+login > .wrap > main > input[type=text],
+login > .wrap > main > input[type=password],
+login > .wrap > main > input[type=submit] {
+    display: block;
+    width: 280px;
+    height: 40px;
+}
+
+login > .wrap > main > input[type=text],
+login > .wrap > main > input[type=password] {
+    padding: 10px 5px;
+    margin-bottom: 15px;
+}
+
+login > .wrap > main > input[type=text].ng-touched.ng-invalid,
+login > .wrap > main > input[type=password].ng-touched.ng-invalid {
+    border: 1px solid #ff0000;
+}
+
+login > .wrap > main > input[type=submit] {
+    margin-top: 15px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+login > .wrap > main > .username:focus ~ .img {
+    background: url("http://7xpijn.com1.z0.glb.clouddn.com/username.gif");
+}
+
+login > .wrap > main > .password:focus ~ .img {
+    background: url("http://7xpijn.com1.z0.glb.clouddn.com/password.gif");
+}
+
+
+login > .wrap > main > input,
+login > .wrap > main > span {
+    vertical-align: middle;
+}
+
+login > .wrap > main {
+    font-size: 12px;
+}
+
+login > .wrap > main > a {
+    float: right;
+    color: #10ae58;
+}
+
