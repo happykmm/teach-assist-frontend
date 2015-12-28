@@ -20,7 +20,6 @@ app.run(function ($http, localStorageService) {
         console.log("set header x-access-token: " + users.token);
         $http.defaults.headers.common["x-access-token"] = users.token;
     }
-
 });
 
 //config router
