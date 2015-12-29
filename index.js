@@ -1,11 +1,16 @@
-var app = angular.module('teachingAssistant', ['LocalStorageModule', 'ngRoute','login', 'courses']);
+var DEBUG = true;
+
+var app = angular.module('teachingAssistant', ['LocalStorageModule', 'ngRoute','login', 'courses', 'courseMain']);
 
 //set API baseURL
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push(function ($q) {
         return {
             'request': function (config) {
-                config.url = config.url.replace("API", "https://teachassist.xyz:8080");
+                if (DEBUG === true)
+                    config.url = config.url.replace("API", "https://localhost:8080");
+                else
+                    config.url = config.url.replace("API", "https://teachassist.xyz:8080");
                 console.log(config.url);
                 return config || $q.when(config);
             }
@@ -32,6 +37,10 @@ app.config(function ($routeProvider) {
         when('/courses', {
             templateUrl: 'components/courses/courses.html',
             controller: 'courses'
+        }).
+        when('/courses/:id', {
+            templateUrl: 'components/course-main/course-main.html',
+            controller: 'courseMain'
         })
         //otherwise({
         //    redirectTo: '/login'

@@ -1,0 +1,88 @@
+courses {
+    min-width: 800px;
+}
+
+courses i {
+    font-family: 'iconfont';
+    font-style: normal;
+    vertical-align: middle;
+}
+
+courses span {
+    vertical-align: middle;
+}
+
+courses > main {
+    margin-left: 300px;
+    min-width: 500px;
+}
+
+
+courses > main > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+courses > main > ul > li {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px;
+    border-bottom: 1px solid #eee;
+}
+
+courses > main > ul > li:hover {
+    background: #eee;
+}
+
+courses > main > ul > li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+courses > main > ul > li > .operate {
+    display: none;
+    float: right;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+courses > main > ul > li > .operate > a {
+    font-size: 13px;
+}
+
+courses > main > ul > li > .operate > span {
+    padding: 0 10px;
+}
+
+courses > main > ul > li:hover > .operate {
+    display: block;
+}
+
+
+
+courses > main > ul > li:last-child > input[type=text] {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    padding: 0;
+    margin: 17px 0;
+    font-size: 14px;
+    width: 200px;
+    vertical-align: middle;
+}
+
+courses > main > ul > li:last-child > input[type=text]:focus {
+    border-bottom: 1px solid #333;
+}
+
+courses > main > ul > li:last-child > .error {
+    font-size: 12px;
+    color: red;
+    transition: all linear 0.3s;
+}
+
+courses > main > ul > li:last-child > .error.ng-hide {
+    opacity: 0;
+}
