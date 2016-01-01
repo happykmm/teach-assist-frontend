@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/components/course-intro-sched/course-intro-sched.css"/>
+
+
+<h1>{{title}}</h1>
+<button ng-show="users.type==='teacher' && !isEdit" ng-click="isEdit=true">编辑</button>
+<button ng-show="users.type==='teacher' && isEdit" ng-click="isEdit=false;save()">保存</button>
+<hr/>
+<p ng-bind-html="content" ng-show="!isEdit"></p>
+<div ng-show="users.type==='teacher' && isEdit">
+    <textarea ckeditor="editorOptions" ng-model="content"></textarea>
+</div>

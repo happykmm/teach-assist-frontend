@@ -1,5 +1,16 @@
 <link rel="stylesheet" href="/components/course-main/course-main.css"/>
 
 <course-main>
-
+    <navbar></navbar>
+    <course-aside></course-aside>
+    <main>
+        <course-intro-sched ng-show="param==='intro'" param="intro" users="users"></course-intro-sched>
+        <course-intro-sched ng-show="param==='sched'" param="sched" users="users"></course-intro-sched>
+        <course-students ng-show="param==='students'"></course-students>
+        <course-ppt></course-ppt>
+        <course-homework></course-homework>
+        <course-posts></course-posts>
+    </main>
 </course-main>
+
+

@@ -1,6 +1,13 @@
 var DEBUG = true;
 
-var app = angular.module('teachingAssistant', ['LocalStorageModule', 'ngRoute','login', 'courses', 'courseMain']);
+var app = angular.module('teachingAssistant', [
+    'LocalStorageModule',
+    'ngRoute',
+    'ngSanitize',
+    'login',
+    'courses',
+    'courseMain'
+]);
 
 //set API baseURL
 app.config(function ($httpProvider) {
@@ -38,7 +45,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'components/courses/courses.html',
             controller: 'courses'
         }).
-        when('/courses/:id', {
+        when('/courses/:_id', {
+            redirectTo: '/courses/:_id/intro'
+        }).
+        when('/courses/:_id/:param', {
             templateUrl: 'components/course-main/course-main.html',
             controller: 'courseMain'
         })

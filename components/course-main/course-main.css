@@ -1,0 +1,11 @@
+course-main {
+    display: block;
+    min-width: 800px;
+}
+
+course-main > main {
+    display: block;
+    padding: 20px 40px 0 280px;
+}
+
+

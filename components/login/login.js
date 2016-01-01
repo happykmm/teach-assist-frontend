@@ -1,4 +1,4 @@
-angular.module('login', []).
+angular.module('login', ['LocalStorageModule']).
 controller('login', function($scope, $http, $timeout, $location, localStorageService) {
     $scope.errorMessage = null;
     $scope.submit = function () {
