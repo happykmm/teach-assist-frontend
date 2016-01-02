@@ -8,8 +8,8 @@ angular.module("courseIntroSched", ['ngSanitize', 'ngCkeditor']).
                 users: "="  //=表示双向绑定
             },
             controller: function($scope, $http, $routeParams) {
-                if ($routeParams.param !== $scope.param)
-                    return false;
+                //if ($routeParams.param !== $scope.param)
+                //    return false;
                 $scope._id = $routeParams._id;
                 $scope.title = ($scope.param === "intro") ? "课程介绍" : "教学计划";
                 $scope.content = null;

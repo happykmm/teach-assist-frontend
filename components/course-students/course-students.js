@@ -4,8 +4,8 @@ angular.module("courseStudents", []).
             templateUrl: '/components/course-students/course-students.html',
             transclude: false,
             controller: function($scope, $http, $routeParams) {
-                if ($routeParams.param !== "students")
-                    return false;
+                //if ($routeParams.param !== "students")
+                //    return false;
 
                 $scope.students = [];
                 $scope.newStudent = null;

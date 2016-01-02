@@ -4,8 +4,8 @@ angular.module("homework", [])
             templateUrl: "/components/homework/homework.html",
             transclude: false,
             controller: function($scope, $http, $routeParams) {
-                if ($routeParams.param !== "homework")
-                    return false;
+                //if ($routeParams.param !== "homework")
+                //    return false;
                 $http({
                     method: 'GET',
                     url: 'API/homework/'+$scope._id

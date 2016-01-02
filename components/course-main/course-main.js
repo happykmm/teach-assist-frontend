@@ -5,9 +5,11 @@ angular.module("courseMain", [
     'courseStudents',
     'homework',
     'LocalStorageModule' ])
-    .controller("courseMain", function($scope, $http, $routeParams, localStorageService) {
+    .controller("courseMain", function($scope, $http, $routeParams, $location, localStorageService) {
         $scope._id = $routeParams._id;
-        $scope.param = $routeParams.param;
+        $scope.param = Object.keys($location.search())[0];
+        $scope.$on('$routeUpdate', function() {
+            $scope.param = Object.keys($location.search())[0];
+        });
         $scope.users = localStorageService.get("users");
-        console.log($scope.users.courses);
     });
