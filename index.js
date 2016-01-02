@@ -45,13 +45,16 @@ app.config(function ($routeProvider) {
             templateUrl: 'components/courses/courses.html',
             controller: 'courses'
         }).
-        when('/courses/:_id', {
-            redirectTo: '/courses/:_id/intro'
-        }).
-        when('/courses/:_id/:param', {
+        when('/courses/:_id/', {
             templateUrl: 'components/course-main/course-main.html',
-            controller: 'courseMain'
+            controller: 'courseMain',
+            reloadOnSearch: false
         })
+        //.
+        //when('/courses/:_id/:param', {
+        //    templateUrl: 'components/course-main/course-main.html',
+        //    controller: 'courseMain'
+        //})
         //otherwise({
         //    redirectTo: '/login'
         //});

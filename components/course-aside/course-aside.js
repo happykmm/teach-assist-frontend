@@ -3,11 +3,13 @@ angular.module("courseAside", ["ngRoute"]).
         return {
             templateUrl: "/components/course-aside/course-aside.html",
             transclude: false,
-            controller: function($scope, $routeParams) {
+            controller: function($scope, $routeParams, $location) {
                 $scope._id = $routeParams._id;
-                $scope.param = $routeParams.param;
+                $scope.$on('$routeUpdate', function() {
+                    $scope.param = Object.keys($location.search())[0];
+                });
                 $scope.jump = function(param) {
-                    location.href = "/#/courses/"+$scope._id+"/"+param;
+                    $location.search(param);
                 }
             }
         }
