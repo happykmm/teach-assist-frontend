@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/components/homework/homework.css"/>
+
+<h1>作业</h1>
+<hr/>
+<ul>
+    <li></li>
+
+</ul>
+<div class="add" ng-click="isEdit=!isEdit">
+    <!--right-->
+    <i ng-show="!isEdit">&#xe607</i>
+    <!--down-->
+    <i ng-show="isEdit">&#xe606</i>
+    <button>添加一次作业</button>
+</div>
+
+<div class="editor" ng-show="isEdit">
+    <div class="title">
+        <span>标题</span>
+        <input type="text"/>
+    </div>
+    <div class="ddl">
+        <span>Deadline</span>
+        <input type="text"/>
+    </div>
+    <div class="problem">
+        <span>问题描述</span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+</div>

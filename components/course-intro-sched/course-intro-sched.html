@@ -9,3 +9,7 @@
 <div ng-show="users.type==='teacher' && isEdit">
     <textarea ckeditor="editorOptions" ng-model="content"></textarea>
 </div>
+<div class="no-content" ng-show="!content && !isEdit">
+    <i>&#xe605</i>
+    <span>无内容</span>
+</div>
