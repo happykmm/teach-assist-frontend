@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/components/course-students/course-students.css"/>
+
+
+<h1>学生名单</h1>
+<hr/>
+<ul>
+    <li>
+        <span>学号</span>
+        <span>姓名</span>
+    </li>
+    <li ng-repeat="student in students track by $index">
+        <span>{{student.number}}</span>
+        <span>{{student.realname}}</span>
+        <span ng-click="delStudent($index)">
+            <i>&#xe604</i>
+            <a href="">删除</a>
+        </span>
+    </li>
+    <li>
+        <span>
+            <input type="text" placeholder="添加一个学生..." ng-model="newStudent" ng-keydown="addStudent($event)"/>
+        </span>
+        <span></span>
+        <span ng-click="addStudent()">
+            <i>&#xe603;</i>
+            <a href="">添加(Enter)</a>
+        </span>
+    </li>
+</ul>

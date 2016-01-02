@@ -1,0 +1,55 @@
+
+course-aside  {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #eee;
+    padding: 72px 10px 0 10px;
+    z-index: 0;
+    display: block;
+}
+
+course-aside  > ul {
+    list-style-type: none;
+    background: #fff;
+    padding: 0;
+    margin: 15px 0;
+}
+
+course-aside  > ul > li {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+    padding: 0 20px;
+    font-size: 16px;
+    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+course-aside  > ul > li:hover {
+    color: rgb(19, 166, 84);
+    background: #eee;
+}
+
+course-aside > ul > li.active {
+    background: #10ae58;
+    color: #fff;
+}
+
+course-aside  > .picture {
+    background: url("http://7xpijn.com1.z0.glb.clouddn.com/spoc.png") center no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    width: 230px;
+    height: 130px;
+}
+
+course-aside  > a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: rgb(16, 174, 88);
+    font-size: 12px;
+}

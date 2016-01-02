@@ -1,0 +1,31 @@
+
+
+
+course-intro-sched  > button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    color: #10ae58;
+    border: 0;
+    font-size: 14px;
+    margin: 15px 0 0 0;
+}
+
+
+course-intro-sched > .no-content {
+    padding: 30px 0 0 30px;
+}
+
+course-intro-sched > .no-content > i {
+    font-family: 'iconfont';
+    font-style: normal;
+    font-size: 28px;
+    color: #999;
+    vertical-align: middle;
+}
+
+course-intro-sched > .no-content > span {
+    vertical-align: middle;
+    font-size: 14px;
+}

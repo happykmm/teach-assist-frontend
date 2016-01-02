@@ -1,0 +1,58 @@
+course-students {
+    display: block;
+}
+
+course-students > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+course-students > ul > li {
+    height: 30px;
+    line-height: 30px;
+}
+
+course-students > ul > li:hover {
+    background: #eee;
+}
+
+course-students > ul > li > span {
+    display: inline-block;
+    font-size: 12px;
+}
+
+course-students > ul > li > span:first-child {
+    width: 40%;
+}
+
+course-students > ul > li > span:nth-child(2) {
+    width: 40%;
+}
+
+course-students > ul > li > span:nth-child(3) {
+    display: none;
+}
+
+course-students > ul > li:hover span:nth-child(3) {
+    display: inline-block;
+    cursor: pointer;
+}
+
+course-students > ul > li:hover span:nth-child(3) > i {
+    font-family: 'iconfont';
+    font-style: normal;
+}
+
+course-students > ul > li:hover span:nth-child(3) > a {
+    color: #10ae58;
+    text-decoration: none;
+}
+
+
+
+course-students > ul > li  input[type=text] {
+    border: 0;
+    border-bottom: 1px solid #333;
+    background: transparent;
+    font-size: 12px;
+}
