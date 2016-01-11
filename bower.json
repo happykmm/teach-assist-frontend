@@ -22,6 +22,13 @@
     "angular-animate": "~1.4.8",
     "ckeditor": "~4.5.6",
     "ng-ckeditor": "~0.2.1",
-    "normalize-css": "normalize.css#~3.0.3"
+    "normalize-css": "normalize.css#~3.0.3",
+    "moment": "~2.11.1",
+    "angular-datepicker": "~2.0.3",
+    "angular-flash-alert": "~1.1.1",
+    "angular-scroll-glue": "~2.0.6",
+    "ng-focus-if": "~1.0.2",
+    "angular-ellipsis": "~0.1.6",
+    "jQuery.dotdotdot": "dotdotdot#~1.7.4"
   }
 }

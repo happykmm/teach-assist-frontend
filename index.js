@@ -1,6 +1,7 @@
 var DEBUG = true;
 
 var app = angular.module('teachingAssistant', [
+    'flash',
     'LocalStorageModule',
     'ngRoute',
     'ngSanitize',
