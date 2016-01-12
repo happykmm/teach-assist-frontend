@@ -4,6 +4,7 @@ angular.module("courseMain", [
     'courseIntroSched',
     'courseStudents',
     'courseWare',
+    'courseTeacher',
     'homework',
     'LocalStorageModule' ])
     .controller("courseMain", function($scope, $http, $routeParams, $location, localStorageService) {

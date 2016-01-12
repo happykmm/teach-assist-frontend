@@ -4,6 +4,7 @@
     <navbar></navbar>
     <course-aside></course-aside>
     <main>
+        <course-teacher ng-show="param==='teacher'" ></course-teacher>
         <course-intro-sched ng-show="param==='intro'" param="intro" users="users"></course-intro-sched>
         <course-intro-sched ng-show="param==='sched'" param="sched" users="users"></course-intro-sched>
         <course-students ng-show="param==='students'"></course-students>
