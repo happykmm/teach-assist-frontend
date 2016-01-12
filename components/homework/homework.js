@@ -8,14 +8,13 @@
         'flash',
         'focus-if',
         'ellipsis'
-    ])
-        .directive("homework", function() {
-            return {
-                templateUrl: "/components/homework/homework.html",
-                transclude: false,
-                controller: controller
-            }
-        });
+    ]).directive("homework", function() {
+        return {
+            templateUrl: "/components/homework/homework.html",
+            transclude: false,
+            controller: controller
+        }
+    });
 
     function controller($scope, $http, Flash) {
         $scope.newHW = newHW();

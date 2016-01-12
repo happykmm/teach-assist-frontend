@@ -86,3 +86,10 @@ courses > main > ul > li:last-child > .error {
 courses > main > ul > li:last-child > .error.ng-hide {
     opacity: 0;
 }
+
+courses > .alert {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: 9999;
+}
