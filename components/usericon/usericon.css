@@ -4,6 +4,7 @@ usericon {
     display: inline-block;
     font-size: 0;
     vertical-align: middle;
+
 }
 
 usericon > span,
@@ -36,6 +37,12 @@ usericon > .more {
     background: #fff;
     padding: 0;
     border: 1px solid #eee;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    line-height: normal;
+    text-align: center;
 }
 
 usericon > .more > li {
