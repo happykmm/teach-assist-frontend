@@ -12,7 +12,7 @@
         $scope.newName = "";
 
         $scope.showDetail = function(course_id) {
-            $location.path('/courses/'+course_id);
+            $location.path('/courses/'+course_id).search('intro');
         };
 
 
@@ -74,8 +74,8 @@
         }).then(function (res) {
             var result = res.data;
             if (result.code === 0) {
+                console.log(result);
                 $scope.courses = result.content;
-                console.log($scope.courses);
             } else {
                 console.error(result);
                 Flash.create("danger", result.desc);
