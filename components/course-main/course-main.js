@@ -3,6 +3,7 @@ angular.module("courseMain", [
     'courseAside',
     'courseIntroSched',
     'courseStudents',
+    'courseWare',
     'homework',
     'LocalStorageModule' ])
     .controller("courseMain", function($scope, $http, $routeParams, $location, localStorageService) {

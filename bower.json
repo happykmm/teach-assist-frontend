@@ -29,6 +29,8 @@
     "angular-flash-alert": "~1.1.1",
     "ng-focus-if": "~1.0.2",
     "jQuery.dotdotdot": "dotdotdot#~1.7.4",
-    "angular-carousel": "~1.0.1"
+    "angular-carousel": "~1.0.1",
+    "plupload": "~2.1.8",
+    "qiniu": "~1.0.9-beta"
   }
 }
