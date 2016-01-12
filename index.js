@@ -8,7 +8,8 @@ var app = angular.module('teachingAssistant', [
     'login',
     'courses',
     'courseMain',
-    'main'
+    'main',
+    'self'
 ]);
 
 //set API baseURL
@@ -55,6 +56,10 @@ app.config(function ($routeProvider) {
         when('/', {
             templateUrl: 'components/main/main.html',
             controller: 'main'
+        }).
+        when('/self', {
+            templateUrl: 'components/self/self.html',
+            controller: 'self'
         })
         //.
         //when('/courses/:_id/:param', {
