@@ -11,6 +11,7 @@ usericon > a {
     vertical-align: middle;
     font-size: 14px;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 usericon > a {
@@ -27,4 +28,28 @@ usericon > .portrait {
     background: url("http://7xpijn.com1.z0.glb.clouddn.com/Teacher-male.png") center no-repeat;
     background-size: contain;
     border-radius: 20px;
+}
+
+usericon > .more {
+    display: block;
+    list-style-type: none;
+    background: #fff;
+    padding: 0;
+    border: 1px solid #eee;
+}
+
+usericon > .more > li {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+usericon > .more > li:hover {
+    background: #eee;
+}
+
+usericon > .more > li:last-child {
+    border-bottom: 0;
 }

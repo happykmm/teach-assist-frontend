@@ -14,6 +14,12 @@
                     delete $http.defaults.headers.common["x-access-token"];
                     $location.path('/login');
                 }
+
+                $scope.isMore = false;
+                $scope.linkTo = function(path) {
+                    $location.path(path);
+                }
+
             }
         }
 
