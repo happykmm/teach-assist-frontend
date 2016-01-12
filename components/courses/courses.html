@@ -6,8 +6,8 @@
         <h1>课程列表</h1>
         <ul>
             <li ng-repeat="course in courses track by $index">
-                <a href="javascript:void(0)" ng-click="showDetail(course._id)">{{course.name}}</a>
-                <div class="operate" ng-show="users.type==='teacher'">
+                <a class="course-name" href="javascript:void(0)" ng-click="showDetail(course._id)">{{course.name}}</a>
+                <div class="operate" ng-show="users.type==='teacher'" >
                     <a href="javascript:void(0)">
                         <i> &#xe602 </i>
                         <span>编辑</span>
@@ -17,6 +17,9 @@
                         <i> &#xe604 </i>
                         <span>删除</span>
                     </a>
+                </div>
+                <div class="teacher-name" ng-show="users.type==='student'">
+                    {{course.teacher}}
                 </div>
             </li>
             <li ng-show="users.type==='teacher'">

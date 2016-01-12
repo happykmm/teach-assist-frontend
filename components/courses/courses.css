@@ -41,6 +41,15 @@ courses > main > ul > li a {
     font-size: 18px;
 }
 
+courses > main > ul > li > .course-name {
+    display: inline-block;
+    width: 60%;
+}
+
+courses > main > ul > li > .teacher-name {
+    display: inline-block;
+}
+
 courses > main > ul > li > .operate {
     display: none;
     float: right;
