@@ -7,7 +7,8 @@ var app = angular.module('teachingAssistant', [
     'ngSanitize',
     'login',
     'courses',
-    'courseMain'
+    'courseMain',
+    'main'
 ]);
 
 //set API baseURL
@@ -50,6 +51,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'components/course-main/course-main.html',
             controller: 'courseMain',
             reloadOnSearch: false
+        }).
+        when('/', {
+            templateUrl: 'components/main/main.html',
+            controller: 'main'
         })
         //.
         //when('/courses/:_id/:param', {

@@ -1,0 +1,30 @@
+
+usericon {
+    margin-right: 50px;
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+usericon > span,
+usericon > a {
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+usericon > a {
+    border-left: 1px solid #ccc;
+    text-decoration: none;
+    color: #10ae58;
+}
+
+usericon > .portrait {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    background: url("http://7xpijn.com1.z0.glb.clouddn.com/Teacher-male.png") center no-repeat;
+    background-size: contain;
+    border-radius: 20px;
+}
