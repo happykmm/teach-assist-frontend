@@ -1,4 +1,4 @@
-var DEBUG = false;
+var DEBUG = true;
 
 var app = angular.module('teachingAssistant', [
     'flash',
