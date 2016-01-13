@@ -8,6 +8,7 @@ var app = angular.module('teachingAssistant', [
     'login',
     'courses',
     'courseMain',
+    'coursePosts',
     'main',
     'self'
 ]);
