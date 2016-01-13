@@ -1,0 +1,31 @@
+self {
+    display: block;
+    min-width: 500px;
+    margin-left: 300px;
+    padding-right: 50px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+self > .alert {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+self > label {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #10ae58;
+}
+
+self > label > i {
+    font-family: 'iconfont';
+    font-style: normal;
+    padding: 0 5px;
+}

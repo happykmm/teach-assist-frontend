@@ -1,12 +1,16 @@
 var DEBUG = false;
 
 var app = angular.module('teachingAssistant', [
+    'flash',
     'LocalStorageModule',
     'ngRoute',
     'ngSanitize',
     'login',
     'courses',
-    'courseMain'
+    'courseMain',
+    'coursePosts',
+    'main',
+    'self'
 ]);
 
 //set API baseURL
@@ -49,6 +53,14 @@ app.config(function ($routeProvider) {
             templateUrl: 'components/course-main/course-main.html',
             controller: 'courseMain',
             reloadOnSearch: false
+        }).
+        when('/', {
+            templateUrl: 'components/main/main.html',
+            controller: 'main'
+        }).
+        when('/self', {
+            templateUrl: 'components/self/self.html',
+            controller: 'self'
         })
         //.
         //when('/courses/:_id/:param', {

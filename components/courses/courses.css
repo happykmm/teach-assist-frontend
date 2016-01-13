@@ -41,6 +41,15 @@ courses > main > ul > li a {
     font-size: 18px;
 }
 
+courses > main > ul > li > .course-name {
+    display: inline-block;
+    width: 60%;
+}
+
+courses > main > ul > li > .teacher-name {
+    display: inline-block;
+}
+
 courses > main > ul > li > .operate {
     display: none;
     float: right;
@@ -85,4 +94,11 @@ courses > main > ul > li:last-child > .error {
 
 courses > main > ul > li:last-child > .error.ng-hide {
     opacity: 0;
+}
+
+courses > .alert {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: 9999;
 }

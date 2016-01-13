@@ -1,0 +1,122 @@
+course-posts {
+    display: block;
+}
+
+course-posts > .alert {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+}
+
+course-posts > .list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+course-posts > .list > li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+course-posts > .list > li:hover {
+    background: #eee;
+}
+
+course-posts > .list > li > .right {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 12px;
+    color: #666;
+}
+
+course-posts > .list > li > .right > label {
+    margin-right: 5px;
+}
+
+course-posts > .list > li > a {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+course-posts > .list > li:hover > a {
+    color: #10ae58;
+}
+
+course-posts > .list > li > label {
+    display: block;
+    font-size: 13px;
+    color: #333;
+    margin-top: 8px;
+}
+
+
+course-posts > .add {
+    margin: 30px 0 0 0;
+    padding: 0;
+}
+
+course-posts > .add > h1 {
+    font-size: 18px;
+    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+course-posts > .add > .editor {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+course-posts > .add > .editor > li {
+    padding: 10px 20px;
+    margin: 0;
+}
+
+course-posts > .add > .editor > li:hover {
+    background: #eee;
+}
+
+course-posts > .add > .editor > li > h2 {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    display: inline-block;
+    width: 100px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+
+course-posts > .add > .editor > li > input[type=text] {
+    border-radius: 2px;
+    border: 1px solid #999;
+    outline: 0;
+    vertical-align: middle;
+    width: 400px;
+}
+
+
+course-posts > .add > .editor > li > textarea {
+    vertical-align: middle;
+    max-width: 400px;
+    min-width: 400px;
+    max-height: 200px;
+    min-height: 200px;
+    border-radius: 2px;
+}
+
+course-posts > .add > .editor > li > button {
+    font-size: 14px;
+    padding: 3px 20px;
+}

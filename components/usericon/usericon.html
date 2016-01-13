@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/components/usericon/usericon.css"/>
+
+
+<i class="portrait"></i>
+<span ng-click="isMore=!isMore">{{users.realname}}</span>
+<a href="javascript:void(0)" ng-click="logout()">退出</a>
+
+<ul ng-show="isMore" class="more">
+    <li ng-click="linkTo('self')">个人信息</li>
+    <li ng-click="linkTo('courses')">课程列表</li>
+</ul>

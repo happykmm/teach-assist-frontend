@@ -4,12 +4,13 @@
     <navbar></navbar>
     <course-aside></course-aside>
     <main>
+        <course-teacher ng-show="param==='teacher'" ></course-teacher>
         <course-intro-sched ng-show="param==='intro'" param="intro" users="users"></course-intro-sched>
         <course-intro-sched ng-show="param==='sched'" param="sched" users="users"></course-intro-sched>
         <course-students ng-show="param==='students'"></course-students>
-        <course-ppt></course-ppt>
+        <course-ware ng-show="param==='ppt'"></course-ware>
         <homework ng-show="param==='homework'"></homework>
-        <course-posts></course-posts>
+        <course-posts ng-show="param==='posts'"></course-posts>
     </main>
 </course-main>
 

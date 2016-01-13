@@ -1,0 +1,94 @@
+course-ware {
+    display: block;
+}
+
+course-ware > .alert {
+    position: fixed;
+    right: 0;
+    top: 0px;
+    z-index: 9999;
+}
+
+course-ware > .add > h1 {
+    font-size: 18px;
+    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+course-ware > .add > #upload-wrap {
+    height: 100px;
+    line-height: 100px;
+    background: #eee;
+    border-radius: 5px;
+    text-align: center;
+    color: #666;
+}
+
+course-ware > .add >  #upload-button {
+    display: none;
+
+}
+
+course-ware > .list {
+    margin: 0 0 30px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+course-ware > .list > li {
+    padding: 0 15px;
+}
+
+course-ware > .list > li:first-child:hover {
+    background: transparent;
+}
+
+course-ware > .list > li:hover {
+    background: #eee;
+}
+
+course-ware > .list > li > h2,
+course-ware > .list > li > h3,
+course-ware > .list > li > h4 {
+    font-size: 13px;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 0;
+}
+
+course-ware > .list > li > h2 {
+    width: 50%;
+    cursor: pointer;
+}
+
+course-ware > .list > li > h3 {
+    width: 25%;
+}
+
+course-ware > .list > li > h4 > label > i {
+    font-family: 'iconfont';
+    font-style: normal;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+course-ware > .list > li > h4 > label {
+    cursor: pointer;
+}
+
+course-ware > .list > li:hover > h4 > label {
+    color: #10ae58;
+}
+
+course-ware > .list > li > h2 > a {
+    text-decoration: none;
+    color: #000;
+}
+
+course-ware > .list > li:hover > h2 > a {
+    color: #10ae58;
+}

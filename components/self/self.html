@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/components/self/self.css"/>
+
+<navbar></navbar>
+
+<self>
+    <div class="alert" flash-message="2000"></div>
+    <h1>自我介绍</h1>
+    <label ng-show="!isEdit" ng-click="isEdit=true">
+        <i>&#xe602</i>编辑
+    </label>
+    <label ng-show="isEdit" ng-click="save()">
+        <i>&#xe603</i>保存
+    </label>
+
+    <p ng-show="!isEdit" ng-bind-html="intro"></p>
+
+    <div ng-show="isEdit" class="editor">
+        <textarea ckeditor="editorOptions" ng-model="intro"></textarea>
+    </div>
+
+</self>

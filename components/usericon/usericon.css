@@ -1,0 +1,62 @@
+
+usericon {
+    margin-right: 50px;
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+
+}
+
+usericon > span,
+usericon > a {
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+usericon > a {
+    border-left: 1px solid #ccc;
+    text-decoration: none;
+    color: #10ae58;
+}
+
+usericon > .portrait {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    background: url("http://7xpijn.com1.z0.glb.clouddn.com/Teacher-male.png") center no-repeat;
+    background-size: contain;
+    border-radius: 20px;
+}
+
+usericon > .more {
+    display: block;
+    list-style-type: none;
+    background: #fff;
+    padding: 0;
+    border: 1px solid #eee;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    line-height: normal;
+    text-align: center;
+}
+
+usericon > .more > li {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+usericon > .more > li:hover {
+    background: #eee;
+}
+
+usericon > .more > li:last-child {
+    border-bottom: 0;
+}

@@ -3,6 +3,7 @@
 <div class="picture"></div>
 <div class="process"></div>
 <ul>
+    <li ng-class="{active: param==='teacher'}"  ng-click="jump('teacher')" ng-show="users.type==='student'">教师介绍</li>
     <li ng-class="{active: param==='intro'}"    ng-click="jump('intro')">课程介绍</li>
     <li ng-class="{active: param==='sched'}"    ng-click="jump('sched')">教学计划</li>
     <li ng-class="{active: param==='students'}" ng-click="jump('students')" ng-show="users.type==='teacher'">学生管理</li>

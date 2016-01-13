@@ -1,26 +1,24 @@
-angular.module('courses', ['navbar', 'ngAnimate']).
-    controller('courses', function($scope, $http, $timeout, localStorageService){
-        $http({
-            method: "GET",
-            url: "API/courses"
-        }).then(function (res) {
-            var result = res.data;
-            if (result.code === 0) {
-                $scope.courses = result.content;
-                console.log($scope.courses);
-            } else {
-                console.error(result);
-            }
-        }, function(err) {
-            console.error(err);
-        });
+(function() {
+
+    angular.module('courses', [
+        'navbar',
+        'ngAnimate',
+        'flash'
+    ]).controller('courses', courses);
+
+    function courses($scope, $http, $location, localStorageService, Flash){
+
         $scope.users = localStorageService.get("users");
         $scope.newName = "";
-        $scope.errorDisplay = false;
-        $scope.errorMessage = "";
+
+        $scope.showDetail = function(course_id) {
+            $location.path('/courses/'+course_id).search('intro');
+        };
+
+
         $scope.addCourse = function() {
             if (!$scope.newName) {
-                error("课程名称不能为空");
+                Flash.create("danger", "课程名称不能为空");
                 return false;
             }
             $http({
@@ -37,13 +35,13 @@ angular.module('courses', ['navbar', 'ngAnimate']).
                     $scope.newName = "";
                 } else {
                     console.error(result);
-                    error(result.desc);
+                    Flash.create("danger", result.desc);
                 }
             }, function(err) {
                 console.error(err);
-                error("网络错误，请稍后重试");
+                Flash.create("danger", "网络错误，请稍后重试");
             });
-        }
+        };
 
         $scope.delCourse = function($index) {
             var id = $scope.courses[$index]._id;
@@ -61,17 +59,31 @@ angular.module('courses', ['navbar', 'ngAnimate']).
                     $scope.courses.splice($index, 1);
                 } else {
                     console.error(result);
+                    Flash.create("danger", result.desc);
                 }
             }, function(err) {
                 console.error(err);
+                Flash.create("danger", "网络错误，请稍后重试");
             })
-        }
+        };
 
-        function error(message) {
-            $scope.errorMessage = message;
-            $scope.errorDisplay = true;
-            $timeout(function() {
-                $scope.errorDisplay = false;
-            }, 1000);
-        }
-    });
+
+        $http({
+            method: "GET",
+            url: "API/courses"
+        }).then(function (res) {
+            var result = res.data;
+            if (result.code === 0) {
+                console.log(result);
+                $scope.courses = result.content;
+            } else {
+                console.error(result);
+                Flash.create("danger", result.desc);
+            }
+        }, function(err) {
+            console.error(err);
+            Flash.create("danger", "网络错误，请稍后重试");
+        });
+    }
+
+})();

@@ -1,0 +1,174 @@
+homework-main {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-bottom: 100px;
+}
+
+
+
+homework-main > .list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+homework-main > .list > li {
+    padding: 15px 20px;
+    margin: 15px 0;
+    background: rgb(245,245,245);
+}
+
+homework-main > .list > li:hover > h2 {
+    color: #10ae58;
+
+}
+
+homework-main > .list > li > h2,
+homework-main > .list > li > h3,
+homework-main > .list > li > h4 {
+    display: inline-block;
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    color: #666;
+    cursor: default;
+}
+
+homework-main > .list > li > h2 {
+    width: 40%;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+homework-main > .list > li:first-child > h2 {
+    cursor: default;
+}
+
+homework-main > .list > li > h3 {
+    width: 30%;
+}
+
+homework-main > .list > li > p,
+homework-main > .list > li > p > p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 0;
+    max-height: 30px;
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+}
+
+homework-main > .list > li > h4 > label > i {
+    font-family: 'iconfont';
+    font-style: normal;
+    padding: 0 5px;
+}
+
+homework-main > .list > li > h4 > label {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+homework-main > .list > li > h4 > label:hover {
+    color: #10ae58;
+}
+
+
+homework-main > .add {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+homework-main > h1,
+homework-main > .add > h1 {
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+homework-main > .add > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+}
+
+homework-main > .add > ul > li > i {
+    font-family: 'iconfont';
+    font-style: normal;
+    font-size: 14px;
+}
+
+homework-main > .add > ul > li > button {
+    background: transparent;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    color: rgb(16, 174, 88);
+}
+
+
+
+homework-main > .editor {
+    font-size: 14px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: all linear 0.2s;
+}
+
+homework-main > .editor.ng-hide {
+    opacity: 0;
+}
+
+homework-main > .editor > li  {
+    padding: 8px 25px;
+}
+
+homework-main > .editor > li:hover {
+    background: #eee;
+}
+
+homework-main > .editor > li > h2 {
+    display: inline-block;
+    width: 150px;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+homework-main > .editor > li > input[type=text],
+homework-main > .editor > .ddl > .datepicker > input {
+    vertical-align: middle;
+    border-radius: 2px;
+    border: 1px solid #999;
+    height: 25px;
+    width: 300px;
+}
+
+
+homework-main > .editor > .ddl > .datepicker {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+homework-main > .editor > .ddl > label {
+    vertical-align: middle;
+}
+
+homework-main > .editor > .problem > h2 {
+    display: block;
+    margin-bottom: 10px;
+}
