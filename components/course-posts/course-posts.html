@@ -6,7 +6,7 @@
 <hr/>
 <ul class="list">
     <li ng-repeat="post in posts track by $index">
-        <a>{{post.title}}</a>
+        <a href="javascript:void(0)">{{post.title}}</a>
         <label>{{post.user_name}} 发表于 {{post.timestamp*1000 | date : 'yyyy/M/d HH:mm'}}</label>
         <div class="right">
             <label>浏览：{{post.count_read}}</label>

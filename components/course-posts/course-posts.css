@@ -9,8 +9,57 @@ course-posts > .alert {
     right: 0;
 }
 
-course-posts > .add {
+course-posts > .list {
+    list-style-type: none;
+    padding: 0;
     margin: 0;
+}
+
+course-posts > .list > li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+course-posts > .list > li:hover {
+    background: #eee;
+}
+
+course-posts > .list > li > .right {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 12px;
+    color: #666;
+}
+
+course-posts > .list > li > .right > label {
+    margin-right: 5px;
+}
+
+course-posts > .list > li > a {
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+course-posts > .list > li:hover > a {
+    color: #10ae58;
+}
+
+course-posts > .list > li > label {
+    display: block;
+    font-size: 13px;
+    color: #333;
+    margin-top: 8px;
+}
+
+
+course-posts > .add {
+    margin: 30px 0 0 0;
     padding: 0;
 }
 
