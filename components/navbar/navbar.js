@@ -9,6 +9,10 @@
             transclude: false,
             controller: function ($scope, $location, $http, localStorageService) {
                 $scope.users = localStorageService.get('users');
+
+                $scope.linkToMain = function() {
+                    $location.path('/').search({});
+                }
             }
         }
     });

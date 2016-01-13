@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/components/course-posts/course-posts.css"/>
+
+<div class="alert" flash-message="2000"></div>
+
+<h1>讨论区</h1>
+<hr/>
+<ul class="list">
+    <li ng-repeat="post in posts track by $index">
+        <a>{{post.title}}</a>
+        <label>{{post.user_name}} 发表于 {{post.timestamp*1000 | date : 'yyyy/M/d HH:mm'}}</label>
+        <div class="right">
+            <label>浏览：{{post.count_read}}</label>
+            <label>点赞：{{post.count_zan}}</label>
+            <label>回复：0</label>
+        </div>
+    </li>
+</ul>
+
+<div class="add">
+    <h1>发表新帖</h1>
+    <hr/>
+    <ul class="editor">
+        <li>
+            <h2>标题</h2>
+            <input ng-model="new.title" type="text"/>
+        </li>
+        <li>
+            <h2>内容</h2>
+            <textarea ng-model="new.content"></textarea>
+        </li>
+        <li>
+            <button ng-click="add()">发表</button>
+        </li>
+    </ul>
+
+</div>

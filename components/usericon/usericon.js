@@ -12,12 +12,12 @@
                 $scope.logout = function() {
                     localStorageService.remove('users');
                     delete $http.defaults.headers.common["x-access-token"];
-                    $location.path('/login');
+                    $location.path('/login').search({});
                 }
 
                 $scope.isMore = false;
                 $scope.linkTo = function(path) {
-                    $location.path(path);
+                    $location.path(path).search({});
                 }
 
             }
