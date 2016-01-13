@@ -1,7 +1,8 @@
 (function() {
 
-    angular.module('courseTeacher', [])
-        .directive('courseTeacher', courseTeacher);
+    angular.module('courseTeacher', [
+        'ngSanitize'
+    ]).directive('courseTeacher', courseTeacher);
 
     function courseTeacher() {
         return {
@@ -12,7 +13,12 @@
                     method: 'GET',
                     url: 'API/courses/'+$scope._id+'/teacher'
                 }).then(function(res) {
-                    console.log(res);
+                    var result = res.data;
+                    if (result.code === 0) {
+                        $scope.intro = result.intro;
+                    } else {
+                        console.error(result);
+                    }
                 }, function(err) {
                     console.error(err);
                 })
