@@ -23,7 +23,7 @@
                     if (DEBUG === true)
                         config.url = config.url.replace("API", "https://localhost:9999");
                     else
-                        config.url = config.url.replace("API", "https://teachassist.xyz:8080");
+                        config.url = config.url.replace("API", "https://teachassist.xyz:9999");
                     console.log(config.url);
                     return config || $q.when(config);
                 }
