@@ -3,16 +3,16 @@
     var DEBUG = true;
 
     var app = angular.module('teachingAssistant', [
-        'flash',
         'LocalStorageModule',
-        'ngRoute',
         'ngSanitize',
-        'login',
-        'courses',
-        'courseMain',
-        'coursePosts',
-        'main',
-        'self'
+        //'login',
+        //'courses',
+        //'courseMain',
+        //'coursePosts',
+        //'main',
+        //'self',
+        'ui.router',
+        'oc.lazyLoad'
     ]);
 
     //set API baseURL
@@ -41,37 +41,90 @@
     });
 
     //config router
-    app.config(function ($routeProvider) {
-        $routeProvider.
-            when('/login', {
-                templateUrl: '/components/login/login.html',
-                controller: 'login'
-            }).
-            when('/courses', {
+    app.config(function ($stateProvider) {
+        $stateProvider
+            .state('login', {
+                url:'/login',
+                templateUrl: 'components/login/login.html',
+                controller: 'login',
+                resolve:{
+                    login:['$ocLazyLoad',function($ocLazyLoad){
+                        return $ocLazyLoad.load([
+                            'components/login/login.js'
+                        ])
+                    }]
+                }
+            })
+            .state('courses', {
+                url:'/courses',
                 templateUrl: 'components/courses/courses.html',
-                controller: 'courses'
-            }).
-            when('/courses/:_id/', {
+                controller: 'courses',
+            resolve:{
+                courses:['$ocLazyLoad',function($ocLazyLoad){
+                    return $ocLazyLoad.load([
+                        'components/courses/courses.js',
+                        'components/navbar/navbar.js',
+                        'components/usericon/usericon.js'
+                    ])
+                }]
+            }
+            })
+            .state('courses_id', {
+                url:'/courses/:_id/:param',
                 templateUrl: 'components/course-main/course-main.html',
                 controller: 'courseMain',
-                reloadOnSearch: false
-            }).
-            when('/', {
-                templateUrl: 'components/main/main.html',
-                controller: 'main'
-            }).
-            when('/self', {
-                templateUrl: 'components/self/self.html',
-                controller: 'self'
+                reloadOnSearch: false,
+                resolve:{
+                    courseMain:['$ocLazyLoad',function($ocLazyLoad){
+                        return $ocLazyLoad.load([
+                            'components/course-main/course-main.js',
+                            'components/navbar/navbar.js',
+                            'components/usericon/usericon.js',
+                            'components/course-aside/course-aside.js',
+                            'components/course-intro-sched/course-intro-sched.js',
+                            'components/course-teacher/course-teacher.js',
+                            'components/course-students/course-students.js',
+                            'components/course-ware/course-ware.js',
+                            'components/homework/homework.js',
+                            'components/homework-main/homework-main.js',
+                            'components/course-posts/course-posts.js',
+                            '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
+                            '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
+                            '/bower_components/angular-flash-alert/dist/angular-flash.min.js'
+                        ])
+                    }]
+                }
             })
-        //.
-        //when('/courses/:_id/:param', {
-        //    templateUrl: 'components/course-main/course-main.html',
-        //    controller: 'courseMain'
-        //})
-        //otherwise({
-        //    redirectTo: '/login'
-        //});
+            .state('index', {
+                url:'/',
+                templateUrl: 'components/main/main.html',
+                controller: 'main',
+                resolve:{
+                    main:['$ocLazyLoad',function($ocLazyLoad){
+                        return $ocLazyLoad.load([
+                            'components/main/main.js',
+                            'components/usericon/usericon.js'
+                        ])
+                    }]
+                }
+            })
+            .state('self', {
+                url:'/self',
+                templateUrl: 'components/self/self.html',
+                controller: 'self',
+                resolve:{
+                    self:['$ocLazyLoad',function($ocLazyLoad){
+                        return $ocLazyLoad.load([
+                            'components/self/self.js',
+                            'components/navbar/navbar.js',
+                            'components/usericon/usericon.js'
+                        ])
+                    }]
+                }
+            })
+
+        //$urlRouterProvider.otherwise('/');
+
     });
 
 

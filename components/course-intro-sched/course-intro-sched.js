@@ -20,10 +20,10 @@
     }
 
 
-    function controller($scope, $http, $routeParams) {
+    function controller($scope, $http, $stateParams) {
         //if ($routeParams.param !== $scope.param)
         //    return false;
-        $scope._id = $routeParams._id;
+        $scope._id = $stateParams._id;
         $scope.title = ($scope.param === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;

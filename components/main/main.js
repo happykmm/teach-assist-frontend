@@ -4,7 +4,8 @@
         'angular-carousel',
         'usericon',
         'LocalStorageModule'
-    ]).controller("main", main);
+    ])
+        .controller("main", main);
 
     function main($scope, $location, localStorageService) {
         $scope.images = [

@@ -1,18 +1,16 @@
 (function() {
 
     angular.module('courses', [
-        'navbar',
-        'ngAnimate',
-        'flash'
+        'ngAnimate'
     ]).controller('courses', courses);
 
-    function courses($scope, $http, $location, localStorageService, Flash){
+    function courses($scope, $http, localStorageService, Flash,$state){
 
         $scope.users = localStorageService.get("users");
         $scope.newName = "";
 
         $scope.showDetail = function(course_id) {
-            $location.path('/courses/'+course_id).search('intro');
+            $state.go('courses_id',{'_id':course_id,'param':'intro'});
         };
 
 

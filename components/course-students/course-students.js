@@ -11,7 +11,7 @@
         }
     }
 
-    function controller($scope, $http, $routeParams) {
+    function controller($scope, $http) {
         //if ($routeParams.param !== "students")
         //    return false;
 

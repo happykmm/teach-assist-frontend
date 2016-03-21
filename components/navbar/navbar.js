@@ -1,8 +1,7 @@
 (function() {
 
     angular.module("navbar", [
-        'LocalStorageModule',
-        'usericon'
+        'LocalStorageModule'
     ]).directive('navbar', function() {
         return {
             templateUrl: '/components/navbar/navbar.html',
@@ -16,6 +15,6 @@
             }
         }
     });
-
+    
 })();
 
