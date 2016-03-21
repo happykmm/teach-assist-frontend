@@ -41,7 +41,7 @@
     });
 
     //config router
-    app.config(function ($stateProvider) {
+    app.config(function ($stateProvider,$urlRouterProvider) {
         $stateProvider
             .state('login', {
                 url:'/login',
@@ -64,7 +64,11 @@
                     return $ocLazyLoad.load([
                         'components/courses/courses.js',
                         'components/navbar/navbar.js',
-                        'components/usericon/usericon.js'
+                        'components/usericon/usericon.js',
+                        '/bower_components/angular-flash-alert/dist/angular-flash.min.js',
+                        '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
+                        '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
+
                     ])
                 }]
             }
@@ -117,13 +121,15 @@
                         return $ocLazyLoad.load([
                             'components/self/self.js',
                             'components/navbar/navbar.js',
-                            'components/usericon/usericon.js'
+                            'components/usericon/usericon.js',
+                            '/bower_components/angular-flash-alert/dist/angular-flash.min.js',
+                            '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
                         ])
                     }]
                 }
             })
 
-        //$urlRouterProvider.otherwise('/');
+        //$urlRouterProvider.otherwise('/#/');
 
     });
 
