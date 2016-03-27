@@ -7,8 +7,8 @@
                 transclude: false,
                 controller: function($scope, $stateParams, $location,$state) {
                     $scope.jump = function(param) {
-                        //$location.search(param);
-                        $state.go("courses_id",{"param":param});
+                        $location.search({'param':param});
+                        //$state.go("courses_id",{"param":param});
                     }
                 }
             }

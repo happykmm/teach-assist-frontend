@@ -43,6 +43,19 @@
     //config router
     app.config(function ($stateProvider,$urlRouterProvider) {
         $stateProvider
+            .state('index', {
+                url:'/',
+                templateUrl: 'components/main/main.html',
+                controller: 'main',
+                resolve:{
+                    main:['$ocLazyLoad',function($ocLazyLoad){
+                        return $ocLazyLoad.load([
+                            'components/main/main.js',
+                            'components/usericon/usericon.js'
+                        ])
+                    }]
+                }
+            })
             .state('login', {
                 url:'/login',
                 templateUrl: 'components/login/login.html',
@@ -74,7 +87,7 @@
             }
             })
             .state('courses_id', {
-                url:'/courses/:_id/:param',
+                url:'/courses/:_id^?:param',
                 templateUrl: 'components/course-main/course-main.html',
                 controller: 'courseMain',
                 reloadOnSearch: false,
@@ -95,19 +108,6 @@
                             '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
                             '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
                             '/bower_components/angular-flash-alert/dist/angular-flash.min.js'
-                        ])
-                    }]
-                }
-            })
-            .state('index', {
-                url:'/',
-                templateUrl: 'components/main/main.html',
-                controller: 'main',
-                resolve:{
-                    main:['$ocLazyLoad',function($ocLazyLoad){
-                        return $ocLazyLoad.load([
-                            'components/main/main.js',
-                            'components/usericon/usericon.js'
                         ])
                     }]
                 }
