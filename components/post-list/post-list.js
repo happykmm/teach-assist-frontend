@@ -6,7 +6,7 @@
 
     function coursePosts() {
         return {
-            templateUrl: '/components/course-posts/course-posts.html',
+            templateUrl: '/components/post-list/post-list.html',
             transclude: false,
             controller: function($scope, $http, Flash,$location,$filter) {
                 $scope.$on("$locationChangeSuccess",getPostList);
@@ -49,6 +49,7 @@
                         if (result.code === 0) {
                             $scope.isEdit=false;
                             $scope.posts.push(result.post);
+                            $scope.length=$scope.posts.length;
                             $scope.new.title="";
                             $scope.new.content="";
                             Flash.create("success", "发表成功！");
@@ -70,6 +71,7 @@
                         var result = res.data;
                         if (result.code === 0) {
                             $scope.posts = result.posts;
+                            $scope.length=$scope.posts.length;
                             filterPost('createdAt');
                         } else {
                             console.error(result);

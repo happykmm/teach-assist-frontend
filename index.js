@@ -102,8 +102,8 @@
                             'components/course-ware/course-ware.js',
                             'components/homework/homework.js',
                             'components/homework-main/homework-main.js',
-                            'components/course-posts/course-posts.js',
-                            'components/course-detail/course-detail.js',
+                            'components/post-list/post-list.js',
+                            'components/post-detail/post-detail.js',
                             '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
                             '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
                         ])

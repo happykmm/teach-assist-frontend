@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/components/course-posts/course-posts.css"/>
+<link rel="stylesheet" href="/components/post-list/post-list.css"/>
 
 <div class="alert" flash-message="2000"></div>
 
@@ -11,6 +11,7 @@
     <li ng-class="{active:filtId===3}" ng-click="filterPost('countReply')">回复数</li>
 </ul>
 <hr/>
+<span ng-show="(!isEdit&&length===0)">欢迎大家来到讨论区！本讨论区供各位同学就课程问题进行交流学习。</span>
 <ul class="list" ng-show="!isEdit">
     <li ng-repeat="post in posts track by $index">
         <a href="javascript:void(0)" ng-click="goDetail(post._id)">{{post.title}}<span ng-if="post.isTop" class="topTag">置顶</span></a>

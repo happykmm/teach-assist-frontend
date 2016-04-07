@@ -5,7 +5,7 @@
 
     function courseDetail(){
         return{
-            templateUrl:'/components/course-detail/course-detail.html',
+            templateUrl:'/components/post-detail/post-detail.html',
             transclude:false,
             controller:function($scope,$http,Flash,$location,$anchorScroll){
                 var delayTime=5000,replyable=0;//delay reply control
