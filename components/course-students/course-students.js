@@ -25,7 +25,7 @@
                 return false;
             $http({
                 method: 'POST',
-                url: "API/courses/"+$scope._id+"/students",
+                url: "API/courses/"+$scope.course_id+"/students",
                 data: {
                     students: [$scope.newStudent]
                 }
@@ -50,7 +50,7 @@
             var _id = $scope.students[$index]._id;
             $http({
                 method: 'DELETE',
-                url: "API/courses/"+$scope._id+"/students",
+                url: "API/courses/"+$scope.course_id+"/students",
                 params: {
                     students: [_id]
                 }
@@ -70,7 +70,7 @@
 
         $http({
             method: 'GET',
-            url: "API/courses/"+$scope._id+"/students"
+            url: "API/courses/"+$scope.course_id+"/students"
         }).then(function(res) {
             var result = res.data;
             $scope.students = result.students;

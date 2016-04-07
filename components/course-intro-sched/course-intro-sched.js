@@ -23,7 +23,7 @@
     function controller($scope, $http, $stateParams) {
         //if ($routeParams.param !== $scope.param)
         //    return false;
-        $scope._id = $stateParams._id;
+        $scope.course_id = $stateParams._id;
         $scope.title = ($scope.param === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;
@@ -31,7 +31,7 @@
 
         $http({
             method: "GET",
-            url: "API/courses/"+$scope._id+"/"+$scope.param
+            url: "API/courses/"+$scope.course_id+"/"+$scope.param
         }).then(function(res) {
             var result = res.data;
             if (result.code === 0) {
@@ -49,7 +49,7 @@
             data[$scope.param] = $scope.content;
             $http({
                 method: "PUT",
-                url: "API/courses/"+$scope._id+"/"+$scope.param,
+                url: "API/courses/"+$scope.course_id+"/"+$scope.param,
                 data: data
             }).then(function(res) {
                 var result = res.data;

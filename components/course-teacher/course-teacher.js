@@ -11,7 +11,7 @@
             controller: function($scope, $http) {
                 $http({
                     method: 'GET',
-                    url: 'API/courses/'+$scope._id+'/teacher'
+                    url: 'API/courses/'+$scope.course_id+'/teacher'
                 }).then(function(res) {
                     var result = res.data;
                     if (result.code === 0) {

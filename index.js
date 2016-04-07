@@ -78,7 +78,6 @@
                         'components/courses/courses.js',
                         'components/navbar/navbar.js',
                         'components/usericon/usericon.js',
-                        '/bower_components/angular-flash-alert/dist/angular-flash.min.js',
                         '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
                         '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
 
@@ -105,9 +104,9 @@
                             'components/homework/homework.js',
                             'components/homework-main/homework-main.js',
                             'components/course-posts/course-posts.js',
-                            '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
+                            'components/course-detail/course-detail.js',
                             '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
-                            '/bower_components/angular-flash-alert/dist/angular-flash.min.js'
+                            '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
                         ])
                     }]
                 }
@@ -122,7 +121,6 @@
                             'components/self/self.js',
                             'components/navbar/navbar.js',
                             'components/usericon/usericon.js',
-                            '/bower_components/angular-flash-alert/dist/angular-flash.min.js',
                             '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
                         ])
                     }]

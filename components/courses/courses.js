@@ -13,7 +13,6 @@
             $state.go('courses_id',{'_id':course_id,'param':'intro'});
         };
 
-
         $scope.addCourse = function() {
             if (!$scope.newName) {
                 Flash.create("danger", "课程名称不能为空");
@@ -64,7 +63,6 @@
                 Flash.create("danger", "网络错误，请稍后重试");
             })
         };
-
 
         $http({
             method: "GET",

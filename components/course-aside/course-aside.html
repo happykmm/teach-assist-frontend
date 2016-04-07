@@ -9,6 +9,6 @@
     <li ng-class="{active: param==='students'}" ng-click="jump('students')" ng-show="users.type==='teacher'">学生管理</li>
     <li ng-class="{active: param==='ppt'}"      ng-click="jump('ppt')">课件</li>
     <li ng-class="{active: param==='homework'}" ng-click="jump('homework')">作业</li>
-    <li ng-class="{active: param==='posts'}"    ng-click="jump('posts')">讨论区</li>
+    <li ng-class="{active: param==='posts' || param==='detail'}"    ng-click="jump('posts')">讨论区</li>
 </ul>
 <a href="">帮助中心</a>

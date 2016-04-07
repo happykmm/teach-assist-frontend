@@ -18,7 +18,6 @@
         }
     }
 
-
     function controller($scope, $http, Flash) {
         $scope.newHW = newHW();
 
@@ -32,7 +31,7 @@
         }
 
         $scope.showDetail = function() {
-
+            
         };
 
 
@@ -49,7 +48,7 @@
             data.deadline = data.deadline.unix();
             $http({
                 method: 'POST',
-                url: 'API/homework/'+$scope._id,
+                url: 'API/homework/'+$scope.course_id,
                 data: data
             }).then(function(res) {
                 var result = res.data;
@@ -68,7 +67,7 @@
         $scope.delHW = function($index) {
             $http({
                 method: 'DELETE',
-                url: 'API/homework/'+$scope._id,
+                url: 'API/homework/'+$scope.course_id,
                 params: {
                     homework_id: $scope.homework[$index]._id
                 }
@@ -87,7 +86,7 @@
 
         $http({
             method: 'GET',
-            url: 'API/homework/'+$scope._id
+            url: 'API/homework/'+$scope.course_id
         }).then(function(res) {
             var result = res.data;
             if (result.code === 0) {

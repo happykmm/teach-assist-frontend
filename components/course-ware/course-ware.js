@@ -15,7 +15,7 @@
         $scope.del = function($index) {
             $http({
                 method: 'DELETE',
-                url: 'API/ppt/'+$scope._id,
+                url: 'API/ppt/'+$scope.course_id,
                 params: {
                     storename: $scope.ppts[$index].storename
                 }
@@ -35,7 +35,7 @@
 
         $http({
             method: 'GET',
-            url: 'API/ppt/'+$scope._id
+            url: 'API/ppt/'+$scope.course_id
         }).then(function(res) {
             var result = res.data;
             if (result.code === 0) {

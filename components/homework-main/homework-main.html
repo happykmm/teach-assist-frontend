@@ -39,7 +39,7 @@
     <hr/>
 </div>
 
-<ul class="editor" ng-show="isEdit" scroll-into-view="isEdit">
+<ul class="editor" ng-show="isEdit" [="isEdit">
     <li class="title">
         <h2>标题</h2>
         <input type="text" ng-model="newHW.title" focus-if="isEdit"/>
