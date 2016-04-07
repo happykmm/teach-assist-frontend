@@ -77,9 +77,9 @@
                     return $ocLazyLoad.load([
                         'components/courses/courses.js',
                         'components/navbar/navbar.js',
-                        'components/usericon/usericon.js',
-                        '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
-                        '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
+                        'components/usericon/usericon.js'
+                        // '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
+                        // '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
 
                     ])
                 }]

@@ -1,7 +1,8 @@
 (function() {
 
     angular.module('courses', [
-        'ngAnimate'
+        'ngAnimate',
+        'flash'
     ]).controller('courses', courses);
 
     function courses($scope, $http, localStorageService, Flash,$state){
