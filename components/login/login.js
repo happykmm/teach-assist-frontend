@@ -21,12 +21,7 @@
                 var result = res.data;
                 if (result.code === 0) {
                     console.log("Login success, token=" + result.token);
-                    localStorageService.set("users", {
-                        number: result.number,
-                        realname: result.realname,
-                        type: result.type,
-                        token: result.token
-                    });
+                    localStorageService.set("users", result);
                     $http.defaults.headers.common["x-access-token"] = result.token;
                     $location.url('/courses');
                 } else {
