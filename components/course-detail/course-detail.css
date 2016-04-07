@@ -7,61 +7,74 @@ course-detail > .alert {
     top: 0;
     right: 0;
 }
-course-detail>.postArea>.textCon{
-    margin: 15px;
+course-detail>.postArea>.postBox{
+    padding:5px 20px 20px 20px;
+    background-color: #f8f8f8;
+}
+course-detail>.postArea>.postBox>hr{
+    background-color: #e7e7e7;
+}
+course-detail>.postArea>.postBox>.textCon{
     padding:5px 0px 5px 0px;
 }
-course-detail>.postArea>h2>.author{
+course-detail>.postArea>.postBox>h2>.author{
     margin-left: 30px;
     font-size: 14px;
     color:#616161;
     font-weight: normal;
 }
 
-course-detail>.postArea>.infoBox{
+course-detail>.postArea>.postBox>.infoBox{
     float:right;
     clear:both;
     font-size: 12px;
     color:#343434;
 }
-course-detail>.postArea>.infoBox>span{
+course-detail>.postArea>.postBox>.infoBox>span{
+    margin-top: 5px;
     color:#343434;
     margin-right: 10px;
 }
-course-detail>.postArea>.infoBox>a{
+course-detail>.postArea>.postBox>.infoBox>a{
+    margin-top: 5px;
     color:#8a8a8a;
     text-decoration: none;
     margin-right: 10px;
 }
-course-detail>.postArea>.infoBox>a:nth-child(3){
+course-detail>.postArea>.postBox>.infoBox>a:nth-child(3){
     color:#343434;
 }
-course-detail>.postArea>.infoBox>a:nth-child(4){
+course-detail>.postArea>.postBox>.infoBox>a:nth-child(4){
     color:#343434;
 }
-course-detail>.postArea>.infoBox>a.active{
+course-detail>.postArea>.postBox>.infoBox>a.active{
     color:#12c162;
 }
-course-detail>.postArea>.actionBox>button{
-    padding:5px 15px 5px 15px;
+course-detail>.postArea>.postBox>button{
+    margin-top: 5px;
+    padding:5px 15px;
     border:0px;
     background-color: #10ae58;
     font-size: 14px;
     margin-left: 5px;
 }
-course-detail>.postArea>.actionBox>button{
+course-detail>.postArea>.postBox>button{
     color:white;
     text-decoration: none;
 }
 
 
 course-detail>.postArea>.replyList{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 14px;
     padding: 0px;
+    margin-left: 5px;
 }
 course-detail>.postArea>.replyList>li{
-    margin-left: 15px;
+    padding-bottom:5px;
+}
+course-detail>.postArea>.replyList>span{
+    font-size: 18px;
 }
 course-detail>.postArea>.replyList>li>.author{
     color:#10ae58;
@@ -69,8 +82,8 @@ course-detail>.postArea>.replyList>li>.author{
 course-detail>.postArea>.replyList>li>a{
     display: none;
     float:right;
-    clear:both;
-    margin-top: -30px;
+    margin-top: -20px;
+    margin-right: 20px;
     text-decoration: none;
     color:#8a8a8a;
     font-size: 12px;
@@ -82,21 +95,22 @@ course-detail>.postArea>.replyList>li>a:hover{
     text-decoration: underline;
 }
 course-detail>.postArea>.replyList>li>.replyTime{
+    margin-left: 10px;
     font-size: 12px;
     color:#616161;
 }
 
 
 course-detail>.postArea>.replyBox{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 5px;
     font-size: 14px;
 
 }
 course-detail>.postArea>.replyBox>button{
     display: block;
-    margin: 10px;
-    padding:5px 15px 5px 15px;
+    margin-top: 10px;
+    padding:8px 20px;
     border:0px;
     background-color: #10ae58;
     color:white;
@@ -155,6 +169,10 @@ course-detail >.editArea > .editor > li > h2 {
 
 
 course-detail >.editArea > .editor > li > input[type=text] {
+    display: block;
+    height:30px;
+    padding-left:5px;
+    margin-top: 10px;
     border-radius: 2px;
     border: 1px solid #999;
     outline: 0;

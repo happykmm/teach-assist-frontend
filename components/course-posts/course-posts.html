@@ -2,12 +2,17 @@
 
 <div class="alert" flash-message="2000"></div>
 
-<h1>{{isEdit?"讨论区":"发表新帖"}}</h1>
-<button class="newPostBtn" ng-click="newPost()" ng-show="!isEdit">发表新帖</button>
-<button class="newPostBtn" ng-click="backForum()" ng-show="isEdit">返回讨论区</button>
+<h1>{{!isEdit?"讨论区":"发表新帖"}}</h1>
+<button class="topBtn" ng-click="newPost()" ng-show="!isEdit">发表新帖</button>
+<button class="topBtn" ng-click="backForum()" ng-show="isEdit">返回讨论区</button>
+<ul class="filterTab">
+    <li ng-class="{active:filtId===1}" ng-click="filterPost('createdAt')">最新发表</li>
+    <li ng-class="{active:filtId===2}" ng-click="filterPost('updatedAt')">最新更新</li>
+    <li ng-class="{active:filtId===3}" ng-click="filterPost('countReply')">回复数</li>
+</ul>
 <hr/>
 <ul class="list" ng-show="!isEdit">
-    <li ng-repeat="post in posts | orderBy:['-isTop','-updatedAt'] track by $index">
+    <li ng-repeat="post in posts track by $index">
         <a href="javascript:void(0)" ng-click="goDetail(post._id)">{{post.title}}<span ng-if="post.isTop" class="topTag">置顶</span></a>
         <label>{{post.userName}} &nbsp;&nbsp;&nbsp;发表于 {{post.createdAt | date : 'yyyy/M/d HH:mm'}}  &nbsp;&nbsp;&nbsp;最后更新 {{post.updatedAt | date:'yyyy/M/d HH:mm'}}</label>
         <div class="right">

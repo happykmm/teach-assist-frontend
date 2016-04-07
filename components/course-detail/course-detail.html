@@ -4,30 +4,31 @@
 
 
 <div class="postArea" ng-show="!isEdit">
-    <h2>{{title}}<span class="author">by {{author}}</span></h2>
-
-    <div class="textCon" ng-bind-html="content">
-    </div>
-    <hr>
-    <div class="infoBox">
-        <a href="" ng-click="editPost()" ng-if="postOwner===users._id">编辑</a>
-        <a href="" ng-click="delPost()" ng-if="postOwner===users._id">删除</a>
-        <a href="" ng-click="makeTop()" ng-if="users.type==='teacher'" ng-class="{active:isTop}">置顶</a>
-        <a href="" class="countLike" ng-class="{active:isLike}" ng-click="like()">点赞: {{countLike}}</a>
-        <span class="countRead">浏览: {{countRead}}</span>
-        <span class="countReply">评论：{{countReply}}</span>
-    </div>
-    <div class="actionBox">
+    <div class="postBox">
+        <h2>{{title}}<span class="author">by {{author}}</span></h2>
+        <div class="textCon" ng-bind-html="content">
+        </div>
+        <hr>
+        <div class="infoBox">
+            <a href="" ng-click="editPost()" ng-if="postOwner===users._id">编辑</a>
+            <a href="" ng-click="delPost()" ng-if="postOwner===users._id">删除</a>
+            <a href="" ng-click="makeTop()" ng-if="users.type==='teacher'" ng-class="{active:isTop}">置顶</a>
+            <a href="" class="countLike" ng-class="{active:isLike}" ng-click="like()">点赞: {{countLike}}</a>
+            <span class="countRead">浏览: {{countRead}}</span>
+            <span class="countReply">评论：{{countReply}}</span>
+        </div>
         <button ng-click="goEditAnchor()">回复</button>
     </div>
 
+
     <ul class="replyList">
-        <h4>所有回复</h4>
+        <span>所有回复</span>
+        <hr>
         <li ng-repeat="reply in replyList track by $index ">
-            <p class="author">{{reply.userName}}</p>
             <div ng-bind-html="reply.content"></div>
             <a href="javascript:void(0)" ng-if="reply.userId===users._id" ng-click="delReply($index)">删除</a>
-            <span class="replyTime">发布时间: {{reply.timestamp | date:'yyyy/M/d HH:mm'}}</span>
+            <span class="author">{{reply.userName}}</span>
+            <span class="replyTime">{{reply.timestamp | date:'yyyy/M/d HH:mm'}}</span>
             <hr>
         </li>
     </ul>

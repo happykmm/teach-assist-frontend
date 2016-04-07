@@ -79,8 +79,7 @@
                         'components/navbar/navbar.js',
                         'components/usericon/usericon.js',
                         '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
-                        '/bower_components/ng-ckeditor/ng-ckeditor.min.js',
-
+                        '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
                     ])
                 }]
             }
@@ -121,6 +120,7 @@
                             'components/self/self.js',
                             'components/navbar/navbar.js',
                             'components/usericon/usericon.js',
+                            '/bower_components/angular-flash-alert/dist/angular-flash.min.js',
                             '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
                         ])
                     }]

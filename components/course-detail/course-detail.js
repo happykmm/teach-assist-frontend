@@ -152,6 +152,7 @@
                             },delayTime);
                             $scope.replyList.push(result.reply);
                             $scope.countReply++;
+                            $scope.reply.content="";
                             Flash.create('success','评论成功！');
                         }
                         else{

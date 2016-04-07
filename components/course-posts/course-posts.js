@@ -8,7 +8,7 @@
         return {
             templateUrl: '/components/course-posts/course-posts.html',
             transclude: false,
-            controller: function($scope, $http, Flash,$location) {
+            controller: function($scope, $http, Flash,$location,$filter) {
                 $scope.$on("$locationChangeSuccess",getPostList);
                 $scope.new = {};
                 $scope.posts = [];
@@ -25,6 +25,8 @@
                 $scope.goDetail=function(post_id){
                     $location.search({'param':'detail','pid':post_id});
                 };
+
+                $scope.filterPost=filterPost;
 
                 $scope.add = function() {
                     if (!$scope.new.title) {
@@ -47,6 +49,8 @@
                         if (result.code === 0) {
                             $scope.isEdit=false;
                             $scope.posts.push(result.post);
+                            $scope.new.title="";
+                            $scope.new.content="";
                             Flash.create("success", "发表成功！");
                         } else {
                             console.error(result.desc);
@@ -66,12 +70,29 @@
                         var result = res.data;
                         if (result.code === 0) {
                             $scope.posts = result.posts;
+                            filterPost('createdAt');
                         } else {
                             console.error(result);
                         }
                     }, function (err) {
                         console.error(err);
                     });
+                }
+
+                function filterPost(filterType){
+                    switch(filterType){
+                        case 'createdAt':$scope.filtId=1;break;
+                        case 'updatedAt':$scope.filtId=2;break;
+                        case 'countReply':$scope.filtId=3;break;
+                    }
+                    $scope.posts.sort(function(a,b) {
+                        if (a.isTop < b.isTop) return 1;
+                        else if (a.isTop > b.isTop) return -1;
+                        else{
+                            if(a[filterType]< b[filterType]) return 1;
+                            else return -1;
+                        }
+                    })
                 }
             }
         }
