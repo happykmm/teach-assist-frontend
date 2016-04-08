@@ -42,6 +42,8 @@
 
     //config router
     app.config(function ($stateProvider,$urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
         $stateProvider
             .state('index', {
                 url:'/',
@@ -125,9 +127,9 @@
                         ])
                     }]
                 }
-            })
+            });
 
-        //$urlRouterProvider.otherwise('/#/');
+
 
     });
 
