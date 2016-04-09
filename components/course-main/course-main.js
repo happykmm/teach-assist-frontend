@@ -8,17 +8,21 @@
             'usericon',
             'courseAside'
         ]
-        
-    ]).controller("courseMain", function($scope, $http, $stateParams, $location, localStorageService) {
-            routeUpdate();
-            $scope.course_id = $stateParams._id;
-            $scope.$on('$locationChangeSuccess', routeUpdate);
-            $scope.users = localStorageService.get("users");
-            //console.log($scope.users);
-            function routeUpdate() {
-                $scope.param = $location.search().param;
-            }
-        });
+    ]).controller("courseMain", courseMain);
+
+
+    function courseMain($scope, $state, $stateParams, $location, localStorageService) {
+        console.log($state);
+        console.log($stateParams);
+        routeUpdate();
+        $scope.course_id = $stateParams.course_id;
+        $scope.$on('$stateChangeSuccess', routeUpdate);
+        $scope.users = localStorageService.get("users");
+        //console.log($scope.users);
+        function routeUpdate() {
+            console.log("f**************************k");
+        }
+    }
 
 })();
 

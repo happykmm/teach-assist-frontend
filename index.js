@@ -39,12 +39,14 @@
     //config dependencies
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
-            debug: true,
+            debug: false,
             modules: [
                 {name:"ckeditor", files:["//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js"]},
                 {name:"plupload", files:["//cdn.bootcss.com/plupload/2.1.8/plupload.full.min.js"]},
                 {name:"Qiniu", files:["/bower_components/qiniu/src/qiniu.min.js"]},
                 {name:"moment", files:["//cdn.bootcss.com/moment.js/2.11.1/moment.min.js"]},
+                {name:"jQuery", files:["//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"]},
+                {name:"dotdotdot", files:["//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"]},
                 
                 {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
                 {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},

@@ -1,6 +1,13 @@
 (function() {
 
-    angular.module('ellipsis', []).directive('ellipsis', [function () {
+    angular.module('ellipsis', [
+        [
+            'jQuery',
+            'dotdotdot'
+        ]
+    ]).directive('ellipsis', ellipsis);
+
+    function ellipsis() {
         return {
             required: 'ngBindHtml',
             restrict: 'A',
@@ -21,6 +28,6 @@
                 });
             }
         };
-    }]);
+    }
 
 })();
