@@ -26,10 +26,6 @@
     });
 
 
-
-
-
-
     //add x-access-token header
     app.run(function ($http, localStorageService) {
         var users = localStorageService.get("users");
@@ -40,26 +36,71 @@
     });
 
 
-
     //config dependencies
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
             debug: true,
-            modules: [
-                {name:"ckeditor", files:["//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js"]},
-
-                {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
-                {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
-                {name:"ngCkeditor", files:["/bower_components/ng-ckeditor/ng-ckeditor.min.js"]},
-
-                {name:"usericon", files:["/components/usericon/usericon.js"]},
-                {name:"navbar", files:["/components/navbar/navbar.js"]},
-
-                {name:"main", files:["/components/main/main.js"]},
-                {name:"login", files:["/components/login/login.js"]},
-                {name:"courses", files:["/components/courses/courses.js"]},
-                {name:"self", files:["/components/self/self.js"]}
-            ]
+            modules: [{
+                name:"ckeditor", 
+                files:["//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js"]
+            },{
+                name:"angular-carousel", 
+                files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]
+            },{
+                name:"ngTouch", 
+                files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]
+            },{
+                name:"ngCkeditor", 
+                files:["/bower_components/ng-ckeditor/ng-ckeditor.min.js"]
+            },{
+                name:"usericon", 
+                files:["/components/usericon/usericon.js"]
+            },{
+                name:"navbar", 
+                files:["/components/navbar/navbar.js"]
+            },{
+                name:"main", 
+                files:["/components/main/main.js"]
+            },{
+                name:"login", 
+                files:["/components/login/login.js"]
+            },{
+                name:"courses", 
+                files:["/components/courses/courses.js"]
+            },{
+                name:"courseMain", 
+                files:["/components/course-main/course-main.js"]
+            },{
+                name:"courseAside", 
+                files:["/components/course-aside/course-aside.js"]
+            },{
+                name:"courseIntroSched", 
+                files:["/components/course-intro-sched/course-intro-sched.js"]
+            },{
+                name:"courseTeacher",
+                files:["/components/course-teacher/course-teacher.js"]
+            },{
+                name:"courseStudents",
+                files:["/components/course-students/course-students.js"]
+            },{
+                name:"courseWare",
+                files:["/components/course-ware/course-ware.js"]
+            },{
+                name:"homework",
+                files:["/components/homework/homework.js"]
+            },{
+                name:"homeworkMain",
+                files:["/components/homework-main/homework-main.js"]
+            },{
+                name:"postList",
+                files:["/components/post-list/post-list.js"]
+            },{
+                name:"postDetail",
+                files:["/components/post-detail/post-detail.js"]
+            },{
+                name:"self", 
+                files:["/components/self/self.js"]
+            }]
         })
     });
 
@@ -99,30 +140,25 @@
                 }
             }
             })
-            .state('courses_id', {
-                url:'/courses/:_id^?:param',
-                templateUrl: 'components/course-main/course-main.html',
+            .state('course', {
+                url:'/courses/:course_id',
+                templateUrl: '/components/course-main/course-main.html',
                 controller: 'courseMain',
                 reloadOnSearch: false,
                 resolve:{
-                    courseMain:['$ocLazyLoad',function($ocLazyLoad){
-                        return $ocLazyLoad.load([
-                            'components/course-main/course-main.js',
-                            'components/navbar/navbar.js',
-                            'components/usericon/usericon.js',
-                            'components/course-aside/course-aside.js',
-                            'components/course-intro-sched/course-intro-sched.js',
-                            'components/course-teacher/course-teacher.js',
-                            'components/course-students/course-students.js',
-                            'components/course-ware/course-ware.js',
-                            'components/homework/homework.js',
-                            'components/homework-main/homework-main.js',
-                            'components/post-list/post-list.js',
-                            'components/post-detail/post-detail.js',
-                            '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
-                            '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
-                        ])
-                    }]
+                    courseMain: function($ocLazyLoad){
+                        return $ocLazyLoad.load(['courseMain'])
+                    }
+                }
+            })
+            .state('course.intro', {
+                url: '/intro',
+                templateUrl: 'components/course-intro-sched/course-intro-sched.html',
+                controller: 'courseIntroSched',
+                resolve: {
+                    courseIntroSched: function($ocLazyLoad){
+                        return $ocLazyLoad.load(['courseIntroSched'])
+                    }
                 }
             })
             .state('self', {

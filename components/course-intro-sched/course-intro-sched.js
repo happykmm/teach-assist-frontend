@@ -2,28 +2,31 @@
 
 
     angular.module("courseIntroSched", [
-        'ngSanitize',
-        'ngCkeditor'
-    ]).directive("courseIntroSched", courseIntroSched);
+        [
+            'ckeditor',
+            'ngCkeditor'
+        ]
+
+    ]).controller("courseIntroSched", courseIntroSched);
 
 
-    function courseIntroSched() {
-        return {
-            templateUrl: "/components/course-intro-sched/course-intro-sched.html",
-            transclude: false,
-            scope: {
-                param: "@", //@表示取字面值
-                users: "="  //=表示双向绑定
-            },
-            controller: controller
-        }
-    }
+    // function courseIntroSched() {
+    //
+    //         // templateUrl: "/components/course-intro-sched/course-intro-sched.html",
+    //         // transclude: false,
+    //         // scope: {
+    //         //     param: "@", //@表示取字面值
+    //         //     users: "="  //=表示双向绑定
+    //         // },
+    //         // controller: controller
+    //
+    // }
 
 
-    function controller($scope, $http, $stateParams) {
+    function courseIntroSched($scope, $http, $stateParams) {
         //if ($routeParams.param !== $scope.param)
         //    return false;
-        $scope.course_id = $stateParams._id;
+        $scope.course_id = $stateParams.course_id;
         $scope.title = ($scope.param === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;

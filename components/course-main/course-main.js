@@ -2,8 +2,14 @@
 
     angular.module("courseMain", [
         'ui.router',
-        'LocalStorageModule' ])
-        .controller("courseMain", function($scope, $http, $stateParams, $location, localStorageService) {
+        'LocalStorageModule',
+        [
+            'navbar',
+            'usericon',
+            'courseAside'
+        ]
+        
+    ]).controller("courseMain", function($scope, $http, $stateParams, $location, localStorageService) {
             routeUpdate();
             $scope.course_id = $stateParams._id;
             $scope.$on('$locationChangeSuccess', routeUpdate);

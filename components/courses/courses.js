@@ -9,13 +9,13 @@
         ]
     ]).controller('courses', courses);
 
-    function courses($scope, $http, localStorageService, Flash,$state){
+    function courses($scope, $http, localStorageService, Flash, $state){
 
         $scope.users = localStorageService.get("users");
         $scope.newName = "";
 
         $scope.showDetail = function(course_id) {
-            $state.go('courses_id',{'_id':course_id,'param':'intro'});
+            $state.go('course',{'course_id':course_id});
         };
 
         $scope.addCourse = function() {
