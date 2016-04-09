@@ -32,9 +32,11 @@
                 {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
                 
                 {name:"usericon", files:["/components/usericon/usericon.js"]},
+                {name:"navbar", files:["/components/navbar/navbar.js"]},
                 
                 {name:"main", files:["/components/main/main.js"]},
-                {name:"login", files:["/components/login/login.js"]}
+                {name:"login", files:["/components/login/login.js"]},
+                {name:"courses", files:["/components/courses/courses.js"]}
             ]
         })
     });
@@ -77,18 +79,12 @@
             })
             .state('courses', {
                 url:'/courses',
-                templateUrl: 'components/courses/courses.html',
+                templateUrl: '/components/courses/courses.html',
                 controller: 'courses',
             resolve:{
-                courses:['$ocLazyLoad',function($ocLazyLoad){
-                    return $ocLazyLoad.load([
-                        'components/courses/courses.js',
-                        'components/navbar/navbar.js',
-                        'components/usericon/usericon.js',
-                        '/bower_components/angular-datepicker/dist/angular-datepicker.min.js',
-                        '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
-                    ])
-                }]
+                courses: function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['courses'])
+                }
             }
             })
             .state('courses_id', {

@@ -2,7 +2,11 @@
 
     angular.module('courses', [
         'ngAnimate',
-        'flash'
+        'flash',
+        [
+            'navbar',
+            'usericon'
+        ]
     ]).controller('courses', courses);
 
     function courses($scope, $http, localStorageService, Flash,$state){

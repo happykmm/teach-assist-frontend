@@ -1,10 +1,13 @@
 (function() {
 
-    angular.module("main", ['LocalStorageModule', [
-        'ngTouch',
-        'angular-carousel',
-        'usericon'
-    ]]).controller("main", main);
+    angular.module("main", [
+        'LocalStorageModule', 
+        [
+            'ngTouch',
+            'angular-carousel',
+            'usericon'
+        ]
+    ]).controller("main", main);
 
     function main($scope, $location, localStorageService) {
         $scope.images = [
