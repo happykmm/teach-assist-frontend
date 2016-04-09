@@ -3,12 +3,12 @@
 <div class="picture"></div>
 <div class="process"></div>
 <ul>
-    <li ng-class="{active: param==='teacher'}"  ng-click="jump('teacher')" ng-show="users.type==='student'">教师介绍</li>
-    <li ng-class="{active: param==='intro'}"    ng-click="jump('intro')">课程介绍</li>
-    <li ng-class="{active: param==='sched'}"    ng-click="jump('sched')">教学计划</li>
-    <li ng-class="{active: param==='students'}" ng-click="jump('students')" ng-show="users.type==='teacher'">学生管理</li>
-    <li ng-class="{active: param==='ppt'}"      ng-click="jump('ware')">课件</li>
-    <li ng-class="{active: param==='homework'}" ng-click="jump('homework')">作业</li>
-    <li ng-class="{active: param==='posts' || param==='detail'}"    ng-click="jump('posts')">讨论区</li>
+    <li ui-sref="course.teacher" ng-class="{active: param==='teacher'}" ng-show="users.type==='student'">教师介绍</li>
+    <li ui-sref="course.intro" ng-class="{active: param==='intro'}">课程介绍</li>
+    <li ui-sref="course.sched" ng-class="{active: param==='sched'}">教学计划</li>
+    <li ui-sref="course.students" ng-class="{active: param==='students'}" ng-show="users.type==='teacher'">学生管理</li>
+    <li ui-sref="course.ware" ng-class="{active: param==='ware'}">课件</li>
+    <li ui-sref="course.homework" ng-class="{active: param==='homework'}">作业</li>
+    <li ui-sref="course.posts" ng-class="{active: param==='posts' || param==='detail'}">讨论区</li>
 </ul>
 <a href="">帮助中心</a>

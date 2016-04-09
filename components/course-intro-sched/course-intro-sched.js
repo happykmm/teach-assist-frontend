@@ -10,23 +10,17 @@
     ]).controller("courseIntroSched", courseIntroSched);
 
 
-    // function courseIntroSched() {
-    //
-    //         // templateUrl: "/components/course-intro-sched/course-intro-sched.html",
-    //         // transclude: false,
-    //         // scope: {
-    //         //     param: "@", //@表示取字面值
-    //         //     users: "="  //=表示双向绑定
-    //         // },
-    //         // controller: controller
-    //
-    // }
+    // transclude: false,
+    // scope: {
+    //     param: "@", //@表示取字面值
+    //     users: "="  //=表示双向绑定
+    // },
 
-
+    
     function courseIntroSched($scope, $http, $stateParams) {
-        //if ($routeParams.param !== $scope.param)
-        //    return false;
-        $scope.course_id = $stateParams.course_id;
+        //$scope.param 继承
+        //$scope.course_id 继承
+        //$scope.users 继承
         $scope.title = ($scope.param === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;

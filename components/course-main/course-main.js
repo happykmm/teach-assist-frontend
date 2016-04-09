@@ -12,15 +12,12 @@
 
 
     function courseMain($scope, $state, $stateParams, $location, localStorageService) {
-        console.log($state);
-        console.log($stateParams);
         routeUpdate();
         $scope.course_id = $stateParams.course_id;
-        $scope.$on('$stateChangeSuccess', routeUpdate);
         $scope.users = localStorageService.get("users");
-        //console.log($scope.users);
+        $scope.$on('$locationChangeSuccess', routeUpdate);
         function routeUpdate() {
-            console.log("f**************************k");
+            $scope.param = $state.current.url.replace("/","");
         }
     }
 
