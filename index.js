@@ -4,6 +4,7 @@
 
     var app = angular.module('teachAssist', [
         'LocalStorageModule',
+        'ngSanitize',           //必须在app定义时声明
         'ui.router',
         'oc.lazyLoad'
     ]);
@@ -24,22 +25,8 @@
         })
     });
 
-    app.config(function($ocLazyLoadProvider) {
-        $ocLazyLoadProvider.config({
-            debug: true,
-            modules: [
-                {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
-                {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
-                
-                {name:"usericon", files:["/components/usericon/usericon.js"]},
-                {name:"navbar", files:["/components/navbar/navbar.js"]},
-                
-                {name:"main", files:["/components/main/main.js"]},
-                {name:"login", files:["/components/login/login.js"]},
-                {name:"courses", files:["/components/courses/courses.js"]}
-            ]
-        })
-    });
+
+
 
 
 
@@ -51,6 +38,31 @@
             $http.defaults.headers.common["x-access-token"] = users.token;
         }
     });
+
+
+
+    //config dependencies
+    app.config(function($ocLazyLoadProvider) {
+        $ocLazyLoadProvider.config({
+            debug: true,
+            modules: [
+                {name:"ckeditor", files:["//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js"]},
+
+                {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
+                {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
+                {name:"ngCkeditor", files:["/bower_components/ng-ckeditor/ng-ckeditor.min.js"]},
+
+                {name:"usericon", files:["/components/usericon/usericon.js"]},
+                {name:"navbar", files:["/components/navbar/navbar.js"]},
+
+                {name:"main", files:["/components/main/main.js"]},
+                {name:"login", files:["/components/login/login.js"]},
+                {name:"courses", files:["/components/courses/courses.js"]},
+                {name:"self", files:["/components/self/self.js"]}
+            ]
+        })
+    });
+
 
     //config router
     app.config(function ($stateProvider, $urlRouterProvider) {
@@ -115,17 +127,11 @@
             })
             .state('self', {
                 url:'/self',
-                templateUrl: 'components/self/self.html',
+                templateUrl: '/components/self/self.html',
                 controller: 'self',
                 resolve:{
                     self:['$ocLazyLoad',function($ocLazyLoad){
-                        return $ocLazyLoad.load([
-                            'components/self/self.js',
-                            'components/navbar/navbar.js',
-                            'components/usericon/usericon.js',
-                            '/bower_components/angular-flash-alert/dist/angular-flash.min.js',
-                            '/bower_components/ng-ckeditor/ng-ckeditor.min.js'
-                        ])
+                        return $ocLazyLoad.load(['self'])
                     }]
                 }
             });

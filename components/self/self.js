@@ -1,8 +1,13 @@
 (function() {
 
     angular.module('self', [
-        'ngCkeditor',
-        'ngSanitize'
+        'flash',
+        [
+            'ckeditor',
+            'ngCkeditor',
+            'navbar',
+            'usericon'
+        ]
     ]).controller('self', controller);
 
     function controller($scope, $http, Flash) {
