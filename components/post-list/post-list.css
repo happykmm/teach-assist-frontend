@@ -1,16 +1,16 @@
-course-posts {
+post-list {
     display: block;
     font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
 }
 
-course-posts > .alert {
+post-list > .alert {
     position: fixed;
     z-index: 9999;
     top: 0;
     right: 0;
 }
 
-course-posts > .topBtn{
+post-list > .topBtn{
     margin-left: 30px;
     border:0px;
     background-color: #10ae58;
@@ -18,49 +18,49 @@ course-posts > .topBtn{
     padding:8px 10px 8px 10px;
     font-size: 14px;
 }
-course-posts>.filterTab{
+post-list>.filterTab{
     float:right;
     margin-top: 5px;
     margin-bottom: 0px;
     margin-right: 20px;
     list-style-type: none;
 }
-course-posts>.filterTab>li{
+post-list>.filterTab>li{
     color:#666;
     display: inline-block;
     padding:8px 15px;
     font-size: 14px;
     cursor:pointer;
 }
-course-posts>.filterTab>li.active{
+post-list>.filterTab>li.active{
     color:white;
     background-color: #10ae58;
 }
 
 
-course-posts > .list {
+post-list > .list {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-course-posts > .list > li {
+post-list > .list > li {
     padding: 10px 20px;
     border-bottom: 1px solid #eee;
     position: relative;
     top: 0;
     left: 0;
 }
-course-posts > .list > li:hover {
+post-list > .list > li:hover {
     background: #eee;
 }
 
-course-posts > .list > li .topTag{
+post-list > .list > li .topTag{
     margin-left: 15px;
     font-size:12px;
     color:#c12600;
 }
 
-course-posts > .list > li > .right {
+post-list > .list > li > .right {
     position: absolute;
     top: 25px;
     right: 20px;
@@ -68,22 +68,22 @@ course-posts > .list > li > .right {
     color: #666;
 }
 
-course-posts > .list > li > .right > label {
+post-list > .list > li > .right > label {
     margin-right: 5px;
 }
 
-course-posts > .list > li > a {
+post-list > .list > li > a {
     display: block;
     font-size: 16px;
     text-decoration: none;
     color: #333;
 }
 
-course-posts > .list > li:hover > a {
+post-list > .list > li:hover > a {
     color: #10ae58;
 }
 
-course-posts > .list > li > label {
+post-list > .list > li > label {
     display: block;
     font-size: 13px;
     color: #333;
@@ -91,12 +91,12 @@ course-posts > .list > li > label {
 }
 
 
-course-posts > .add {
+post-list > .add {
     margin: 30px 0 0 0;
     padding: 0;
 }
 
-course-posts > .add > h1 {
+post-list > .add > h1 {
     font-size: 18px;
     font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
     font-weight: normal;
@@ -104,25 +104,25 @@ course-posts > .add > h1 {
     margin: 10px 0 0 0;
 }
 
-course-posts > .add > .editor {
+post-list > .add > .editor {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-course-posts > .add > .editor > li {
+post-list > .add > .editor > li {
     padding: 10px 20px;
     margin: 0;
 }
 
-course-posts > .add > .editor > li:hover {
+post-list > .add > .editor > li:hover {
     background: #eee;
 }
-course-posts > .add > .editor > li:last-child:hover{
+post-list > .add > .editor > li:last-child:hover{
     background-color: white;
 }
 
-course-posts > .add > .editor > li > h2 {
+post-list > .add > .editor > li > h2 {
     font-size: 14px;
     color: #666;
     font-weight: normal;
@@ -133,7 +133,7 @@ course-posts > .add > .editor > li > h2 {
 }
 
 
-course-posts > .add > .editor > li > input[type=text] {
+post-list > .add > .editor > li > input[type=text] {
     display: block;
     height:30px;
     padding-left:5px;
@@ -146,7 +146,7 @@ course-posts > .add > .editor > li > input[type=text] {
 }
 
 
-course-posts > .add > .editor > li > textarea {
+post-list > .add > .editor > li > textarea {
     vertical-align: middle;
     max-width: 400px;
     min-width: 400px;
@@ -154,10 +154,10 @@ course-posts > .add > .editor > li > textarea {
     min-height: 200px;
     border-radius: 2px;
 }
-course-posts > .add > .editor > li > #cke_editor3{
+post-list > .add > .editor > li > #cke_editor3{
     margin-top: 15px;
 }
-course-posts > .add > .editor > li > button {
+post-list > .add > .editor > li > button {
     font-size: 14px;
     padding: 10px 25px;
     background-color: #10ae58;

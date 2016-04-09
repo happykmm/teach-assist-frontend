@@ -1,15 +1,22 @@
 (function() {
 
     angular.module("homework", [
-        'homeworkMain'
-    ]).directive("homework", function() {
-        return {
-            templateUrl: "/components/homework/homework.html",
-            transclude: false,
-            controller: function() {
-
-            }
-        }
+        [
+            'homeworkMain',
+            'focus-if',
+            'datePicker',
+            'ellipsis',
+            'scrollIntoView',
+            'moment'
+        ]
+    ]).controller("homework", function() {
+        // return {
+        //     templateUrl: "/components/homework/homework.html",
+        //     transclude: false,
+        //     controller: function() {
+        //
+        //     }
+        // }
     });
 
 

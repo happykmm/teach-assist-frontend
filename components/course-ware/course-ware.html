@@ -1,29 +1,33 @@
 <link rel="stylesheet" href="/components/course-ware/course-ware.css"/>
 <div class="alert" flash-message="1000"></div>
-<h1>课件</h1>
-<hr/>
-<ul class="list">
-    <li>
-        <h2>名称</h2>
-        <h3>上传时间</h3>
-        <h4 ng-show="users.type==='teacher'">操作</h4>
-    </li>
-    <li ng-repeat="ppt in ppts track by $index">
-        <h2>
-            <a target="_blank" href="http://7xnvbh.com1.z0.glb.clouddn.com/{{ppt.storename}}">{{ppt.filename}}</a>
-        </h2>
-        <h3>{{ppt.timestamp*1000 | date : 'yyyy/M/d HH:mm' }}</h3>
-        <h4 ng-show="users.type==='teacher'">
-            <label ng-click="del($index)">
-                <i>&#xe604</i>删除
-            </label>
-        </h4>
-    </li>
-</ul>
 
-<div class="add" ng-show="users.type==='teacher'">
-    <h1>上传课件</h1>
+<course-ware>
+    <h1>课件</h1>
     <hr/>
-    <div id="upload-wrap">拖拽文件至此上传</div>
-    <button id="upload-button" ng-click="upload()">选择文件</button>
-</div>
+    <ul class="list">
+        <li>
+            <h2>名称</h2>
+            <h3>上传时间</h3>
+            <h4 ng-show="users.type==='teacher'">操作</h4>
+        </li>
+        <li ng-repeat="ppt in ppts track by $index">
+            <h2>
+                <a target="_blank" href="http://7xnvbh.com1.z0.glb.clouddn.com/{{ppt.storename}}">{{ppt.filename}}</a>
+            </h2>
+            <h3>{{ppt.timestamp*1000 | date : 'yyyy/M/d HH:mm' }}</h3>
+            <h4 ng-show="users.type==='teacher'">
+                <label ng-click="del($index)">
+                    <i>&#xe604</i>删除
+                </label>
+            </h4>
+        </li>
+    </ul>
+
+    <div class="add" ng-show="users.type==='teacher'">
+        <h1>上传课件</h1>
+        <hr/>
+        <div id="upload-wrap">拖拽文件至此上传</div>
+        <button id="upload-button" ng-click="upload()">选择文件</button>
+    </div>
+
+</course-ware>

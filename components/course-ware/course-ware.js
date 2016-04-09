@@ -1,16 +1,15 @@
 (function() {
 
     angular.module('courseWare', [
-        'flash'
-    ]).directive('courseWare', function() {
-            return {
-                templateUrl: '/components/course-ware/course-ware.html',
-                transclude: false,
-                controller: controller
-            }
-        });
+        'flash',
+        [
+            'plupload',
+            'Qiniu'
+        ]
 
-    function controller($scope, $http, Flash) {
+    ]).controller('courseWare', courseWare);
+
+    function courseWare($scope, $http, Flash) {
 
         $scope.del = function($index) {
             $http({

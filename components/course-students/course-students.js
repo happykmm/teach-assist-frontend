@@ -1,17 +1,18 @@
 (function() {
 
-    angular.module("courseStudents", []).
-        directive("courseStudents", courseStudents);
+    angular.module("courseStudents", [
 
-    function courseStudents() {
-        return {
-            templateUrl: '/components/course-students/course-students.html',
-            transclude: false,
-            controller: controller
-        }
-    }
+    ]).controller("courseStudents", courseStudents);
 
-    function controller($scope, $http) {
+    // function courseStudents() {
+    //     return {
+    //         templateUrl: '/components/course-students/course-students.html',
+    //         transclude: false,
+    //         controller: controller
+    //     }
+    // }
+
+    function courseStudents($scope, $http) {
         //if ($routeParams.param !== "students")
         //    return false;
 
