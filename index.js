@@ -2,15 +2,8 @@
 
     var DEBUG = true;
 
-    var app = angular.module('teachingAssistant', [
+    var app = angular.module('teachAssist', [
         'LocalStorageModule',
-        'ngSanitize',
-        //'login',
-        //'courses',
-        //'courseMain',
-        //'coursePosts',
-        //'main',
-        //'self',
         'ui.router',
         'oc.lazyLoad'
     ]);
@@ -31,6 +24,23 @@
         })
     });
 
+    app.config(function($ocLazyLoadProvider) {
+        $ocLazyLoadProvider.config({
+            debug: true,
+            modules: [
+                {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
+                {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
+                
+                {name:"usericon", files:["/components/usericon/usericon.js"]},
+                
+                {name:"main", files:["/components/main/main.js"]},
+                {name:"login", files:["/components/login/login.js"]}
+            ]
+        })
+    });
+
+
+
     //add x-access-token header
     app.run(function ($http, localStorageService) {
         var users = localStorageService.get("users");
@@ -41,33 +51,28 @@
     });
 
     //config router
-    app.config(function ($stateProvider,$urlRouterProvider) {
+    app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('index', {
+            .state('main', {
                 url:'/',
-                templateUrl: 'components/main/main.html',
+                templateUrl: '/components/main/main.html',
                 controller: 'main',
                 resolve:{
-                    main:['$ocLazyLoad',function($ocLazyLoad){
-                        return $ocLazyLoad.load([
-                            'components/main/main.js',
-                            'components/usericon/usericon.js'
-                        ])
-                    }]
+                    main: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(["main"])
+                    }
                 }
             })
             .state('login', {
                 url:'/login',
-                templateUrl: 'components/login/login.html',
+                templateUrl: '/components/login/login.html',
                 controller: 'login',
                 resolve:{
-                    login:['$ocLazyLoad',function($ocLazyLoad){
-                        return $ocLazyLoad.load([
-                            'components/login/login.js'
-                        ])
-                    }]
+                    login: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(["login"])
+                    }
                 }
             })
             .state('courses', {

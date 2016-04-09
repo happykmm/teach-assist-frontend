@@ -1,7 +1,8 @@
 (function() {
 
-    angular.module('login', ['LocalStorageModule']).
-        controller('login', login);
+    angular.module('login', [
+        'LocalStorageModule'
+    ]).controller('login', login);
 
     function login($scope, $http, $timeout, $location, localStorageService) {
         $scope.errorMessage = null;
