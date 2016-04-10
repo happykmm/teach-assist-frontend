@@ -56,31 +56,139 @@
                 {name:"jQuery", files:["//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"]},
                 {name:"dotdotdot", files:["//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"]},
                 
-                {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
+                {
+                    name:"angular-carousel", 
+                    files:[
+                        "//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.css",
+                        "//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"
+                    ]
+                },
                 {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
                 {name:"focus-if", files:["/bower_components/ng-focus-if/focusIf.min.js"]},
-                {name:"datePicker", files:["/bower_components/angular-datepicker/dist/angular-datepicker.min.js"]},
+                {
+                    name:"datePicker", 
+                    files:[
+                        "/bower_components/angular-datepicker/dist/angular-datepicker.min.css",
+                        "/bower_components/angular-datepicker/dist/angular-datepicker.min.js"
+                    ]
+                },
 
                 {name:"ellipsis", files:["/directives/ellipsis.js"]},
                 {name:"scrollIntoView", files:["/directives/scroll-into-view.js"]},
 
-                {name:"usericon", files:["/components/usericon/usericon.js"]},
-                {name:"navbar", files:["/components/navbar/navbar.js"]},
+                {
+                    name:"usericon", 
+                    files:[
+                        "/components/usericon/usericon.css",
+                        "/components/usericon/usericon.js"
+                    ]
+                },
+                {
+                    name:"navbar", 
+                    files:[
+                        "/components/navbar/navbar.css",
+                        "/components/navbar/navbar.js"
+                    ]
+                },
                 
-                {name:"main", files:["/components/main/main.js"]},
-                {name:"login", files:["/components/login/login.js"]},
-                {name:"courses", files:["/components/courses/courses.js"]},
-                {name:"courseMain", files:["/components/course-main/course-main.js"]},
-                {name:"courseAside", files:["/components/course-aside/course-aside.js"]},
-                {name:"courseIntroSched", files:["/components/course-intro-sched/course-intro-sched.js"]},
-                {name:"courseTeacher", files:["/components/course-teacher/course-teacher.js"]},
-                {name:"courseStudents", files:["/components/course-students/course-students.js"]},
-                {name:"courseWare", files:["/components/course-ware/course-ware.js"]},
-                {name:"homework", files:["/components/homework/homework.js"]},
-                {name:"homeworkMain", files:["/components/homework-main/homework-main.js"]},
-                {name:"postList", files:["/components/post-list/post-list.js"]},
-                {name:"postDetail", files:["/components/post-detail/post-detail.js"]},
-                {name:"self", files:["/components/self/self.js"]}
+                {
+                    name:"main", 
+                    files:[
+                        "/components/main/main.css",
+                        "/components/main/main.js"
+                    ]
+                },
+                {
+                    name:"login", 
+                    files:[
+                        "/components/login/login.css",
+                        "/components/login/login.js"
+                    ]
+                },
+                {
+                    name:"courses", 
+                    files:[
+                        "/components/courses/courses.css",
+                        "/components/courses/courses.js"
+                    ]
+                },
+                {
+                    name:"courseMain", 
+                    files:[
+                        "/components/course-main/course-main.css",
+                        "/components/course-main/course-main.js"
+                    ]
+                },
+                {
+                    name:"courseAside", 
+                    files:[
+                        "/components/course-aside/course-aside.css",
+                        "/components/course-aside/course-aside.js"
+                    ]
+                },
+                {
+                    name:"courseIntroSched", 
+                    files:[
+                        "/components/course-intro-sched/course-intro-sched.css",
+                        "/components/course-intro-sched/course-intro-sched.js"
+                    ]
+                },
+                {
+                    name:"courseTeacher", 
+                    files:[
+                        "/components/course-teacher/course-teacher.css",
+                        "/components/course-teacher/course-teacher.js"
+                    ]
+                },
+                {
+                    name:"courseStudents", 
+                    files:[
+                        "/components/course-students/course-students.css",
+                        "/components/course-students/course-students.js"
+                    ]
+                },
+                {
+                    name:"courseWare", 
+                    files:[
+                        "/components/course-ware/course-ware.css",
+                        "/components/course-ware/course-ware.js"
+                    ]
+                },
+                {
+                    name:"homework", 
+                    files:[
+                        "/components/homework/homework.css",
+                        "/components/homework/homework.js"
+                    ]
+                },
+                {
+                    name:"homeworkMain", 
+                    files:[
+                        "/components/homework-main/homework-main.css",
+                        "/components/homework-main/homework-main.js"
+                    ]
+                },
+                {
+                    name:"postList", 
+                    files:[
+                        "/components/post-list/post-list.css",
+                        "/components/post-list/post-list.js"
+                    ]
+                },
+                {
+                    name:"postDetail", 
+                    files:[
+                        "/components/post-detail/post-detail.css",
+                        "/components/post-detail/post-detail.js"
+                    ]
+                },
+                {
+                    name:"self", 
+                    files:[
+                        "/components/self/self.css",
+                        "/components/self/self.js"
+                    ]
+                }
             ]
         })
     });
