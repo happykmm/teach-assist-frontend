@@ -15,9 +15,9 @@
             // },
             controller: function($scope, $state) {
                 // 从父控制器继承
-                // $scope.course_id = $stateParams.course_id;
-                // $scope.users = localStorageService.get("users");
-                // $scope.state = "";
+                // $scope.course_id
+                // $scope.users
+                // $scope.state
             }
         }
     }
