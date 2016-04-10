@@ -194,6 +194,17 @@
     });
 
 
+    //Redirect a state to default substate
+    app.run(function($rootScope, $state) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, params) {
+            if (toState.redirectTo) {
+                event.preventDefault();
+                $state.go(toState.redirectTo, params)
+            }
+        });
+    });
+
+
     //config router
     app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -223,22 +234,23 @@
                 url:'/courses',
                 templateUrl: '/components/courses/courses.html',
                 controller: 'courses',
-            resolve:{
-                courses: function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['courses'])
+                resolve:{
+                    courses: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(['courses'])
+                    }
                 }
-            }
             })
             .state('course', {
                 url:'/courses/:course_id',
                 templateUrl: '/components/course-main/course-main.html',
                 controller: 'courseMain',
-                reloadOnSearch: false,
+                //reloadOnSearch: false,
                 resolve:{
                     courseMain: function($ocLazyLoad){
                         return $ocLazyLoad.load(['courseMain'])
                     }
-                }
+                },
+                redirectTo: 'course.intro'
             })
             .state('course.intro', {
                 url: '/intro',
