@@ -39,7 +39,7 @@
     //config dependencies
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
-            debug: true,
+            debug: false,
             modules: [
                 {
                     name:"ngCkeditor",
@@ -199,7 +199,7 @@
         $rootScope.$on('$stateChangeStart', function(event, toState, params) {
             if (toState.redirectTo) {
                 event.preventDefault();
-                $state.go(toState.redirectTo, params)
+                $state.go(toState.redirectTo, params);
             }
         });
     });

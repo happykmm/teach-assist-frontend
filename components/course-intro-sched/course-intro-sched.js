@@ -4,12 +4,12 @@
         'ngCkeditor'
     ]).controller("courseIntroSched", courseIntroSched);
     
-    function courseIntroSched($scope, $http) {
+    function courseIntroSched($scope, $state, $http) {
         // 从父控制器继承
         // $scope.course_id
         // $scope.users
-        // $scope.state
-
+        
+        $scope.state = $state.current.name.replace("course.", "");
         $scope.title = ($scope.state === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;
