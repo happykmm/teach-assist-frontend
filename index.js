@@ -41,8 +41,15 @@
         $ocLazyLoadProvider.config({
             debug: false,
             modules: [
-                //ckeditor is already compressed.
-                {name:"ckeditor", files:["//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js"]},
+                {
+                    name:"ngCkeditor", 
+                    files:[
+                        "//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js",   //already minimized.
+                        "/bower_components/ng-ckeditor/ng-ckeditor.min.js"
+                    ],
+                    serie: true
+                },
+                
                 {name:"plupload", files:["//cdn.bootcss.com/plupload/2.1.8/plupload.full.min.js"]},
                 {name:"Qiniu", files:["/bower_components/qiniu/src/qiniu.min.js"]},
                 {name:"moment", files:["//cdn.bootcss.com/moment.js/2.11.1/moment.min.js"]},
@@ -51,7 +58,6 @@
                 
                 {name:"angular-carousel", files:["//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"]},
                 {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
-                {name:"ngCkeditor", files:["/bower_components/ng-ckeditor/ng-ckeditor.min.js"]},
                 {name:"focus-if", files:["/bower_components/ng-focus-if/focusIf.min.js"]},
                 {name:"datePicker", files:["/bower_components/angular-datepicker/dist/angular-datepicker.min.js"]},
 

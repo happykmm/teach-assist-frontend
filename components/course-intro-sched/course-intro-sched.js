@@ -2,7 +2,6 @@
 
     angular.module("courseIntroSched", [
         [
-            'ckeditor',
             'ngCkeditor'
         ]
     ]).controller("courseIntroSched", courseIntroSched);
