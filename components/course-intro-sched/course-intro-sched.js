@@ -1,9 +1,7 @@
 (function() {
 
     angular.module("courseIntroSched", [
-        [
-            'ngCkeditor'
-        ]
+        'ngCkeditor'
     ]).controller("courseIntroSched", courseIntroSched);
     
     function courseIntroSched($scope, $http) {

@@ -2,9 +2,7 @@
 
     angular.module('postList', [
         'flash',
-        [
-            'ngCkeditor'
-        ]
+        'ngCkeditor'
     ]).controller('postList', postList);
 
     function postList($scope, $http, Flash,$location,$filter) {

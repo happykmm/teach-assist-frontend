@@ -39,10 +39,10 @@
     //config dependencies
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
-            debug: false,
+            debug: true,
             modules: [
                 {
-                    name:"ngCkeditor", 
+                    name:"ngCkeditor",
                     files:[
                         "//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js",   //already minimized.
                         "/bower_components/ng-ckeditor/ng-ckeditor.min.js"
@@ -246,7 +246,10 @@
                 controller: 'courseIntroSched',
                 resolve: {
                     courseIntroSched: function($ocLazyLoad){
-                        return $ocLazyLoad.load(['courseIntroSched'])
+                        return $ocLazyLoad.load(
+                            ['ngCkeditor','courseIntroSched'],
+                            {serie: true}
+                        )
                     }
                 }
             })
@@ -256,7 +259,10 @@
                 controller: 'courseIntroSched',
                 resolve: {
                     courseIntroSched: function($ocLazyLoad){
-                        return $ocLazyLoad.load(['courseIntroSched'])
+                        return $ocLazyLoad.load(
+                            ['ngCkeditor','courseIntroSched'],
+                            {serie: true}
+                        )
                     }
                 }
             })
@@ -297,7 +303,10 @@
                 controller: 'homework',
                 resolve: {
                     homework: function($ocLazyLoad){
-                        return $ocLazyLoad.load(['homework'])
+                        return $ocLazyLoad.load(
+                            ['ngCkeditor','homework'],
+                            {serie: true}
+                        )
                     }
                 }
             })
@@ -307,7 +316,10 @@
                 controller: 'postList',
                 resolve: {
                     postList: function($ocLazyLoad){
-                        return $ocLazyLoad.load(['postList'])
+                        return $ocLazyLoad.load(
+                            ['ngCkeditor','postList'],
+                            {serie: true}
+                        )
                     }
                 }
             })
@@ -327,7 +339,10 @@
                 controller: 'self',
                 resolve:{
                     self: function($ocLazyLoad){
-                        return $ocLazyLoad.load(['self'])
+                        return $ocLazyLoad.load(
+                            ['ngCkeditor','self'],
+                            {serie: true}
+                        )
                     }
                 }
             });

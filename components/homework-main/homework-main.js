@@ -1,13 +1,16 @@
 (function() {
 
     angular.module('homeworkMain', [
-        'datePicker',
+        'flash',
         'ngAnimate',
         'ngSanitize',
-        'scrollIntoView',
-        'flash',
-        'focus-if',
-        'ellipsis'
+        'ngCkeditor',
+        [
+            'focus-if',
+            'datePicker',
+            'scrollIntoView',
+            'ellipsis'
+        ]
     ]).directive('homeworkMain', homeworkMain);
 
     function homeworkMain() {

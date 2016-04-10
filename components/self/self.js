@@ -2,9 +2,8 @@
 
     angular.module('self', [
         'flash',
-        [
-            'ckeditor',
-            'ngCkeditor',
+        'ngCkeditor',
+        [   //dependencies injected by ocLazyLoad
             'navbar',
             'usericon'
         ]
