@@ -1,56 +1,56 @@
-course-detail{
+post-detail{
     font-family: "Microsoft Yahei", "Helvetica Neue", "Microsoft YaHei Light", Helvetica, Arial, sans-serif;
 }
-course-detail > .alert {
+post-detail > .alert {
     position: fixed;
     z-index: 9999;
     top: 0;
     right: 0;
 }
-course-detail>.postArea>.postBox{
+post-detail>.postArea>.postBox{
     padding:5px 20px 20px 20px;
     background-color: #f8f8f8;
 }
-course-detail>.postArea>.postBox>hr{
+post-detail>.postArea>.postBox>hr{
     background-color: #e7e7e7;
 }
-course-detail>.postArea>.postBox>.textCon{
+post-detail>.postArea>.postBox>.textCon{
     padding:5px 0px 5px 0px;
 }
-course-detail>.postArea>.postBox>h2>.author{
+post-detail>.postArea>.postBox>h2>.author{
     margin-left: 30px;
     font-size: 14px;
     color:#616161;
     font-weight: normal;
 }
 
-course-detail>.postArea>.postBox>.infoBox{
+post-detail>.postArea>.postBox>.infoBox{
     float:right;
     clear:both;
     font-size: 12px;
     color:#343434;
 }
-course-detail>.postArea>.postBox>.infoBox>span{
+post-detail>.postArea>.postBox>.infoBox>span{
     margin-top: 5px;
     color:#343434;
     margin-right: 10px;
 }
-course-detail>.postArea>.postBox>.infoBox>a{
+post-detail>.postArea>.postBox>.infoBox>a{
     margin-top: 5px;
     color:#8a8a8a;
     text-decoration: none;
     margin-right: 10px;
 }
-course-detail>.postArea>.postBox>.infoBox>a:nth-child(3){
+post-detail>.postArea>.postBox>.infoBox>a:nth-child(3){
     color:#343434;
 }
-course-detail>.postArea>.postBox>.infoBox>a:nth-child(4){
+post-detail>.postArea>.postBox>.infoBox>a:nth-child(4){
     color:#343434;
 }
-course-detail>.postArea>.postBox>.infoBox>a.active{
+post-detail>.postArea>.postBox>.infoBox>a.active{
     color:#12c162;
 }
-course-detail>.postArea>.postBox>button{
+post-detail>.postArea>.postBox>button{
     margin-top: 5px;
     padding:5px 15px;
     border:0px;
@@ -58,28 +58,28 @@ course-detail>.postArea>.postBox>button{
     font-size: 14px;
     margin-left: 5px;
 }
-course-detail>.postArea>.postBox>button{
+post-detail>.postArea>.postBox>button{
     color:white;
     text-decoration: none;
 }
 
 
-course-detail>.postArea>.replyList{
+post-detail>.postArea>.replyList{
     margin-top: 30px;
     font-size: 14px;
     padding: 0px;
     margin-left: 5px;
 }
-course-detail>.postArea>.replyList>li{
+post-detail>.postArea>.replyList>li{
     padding-bottom:5px;
 }
-course-detail>.postArea>.replyList>span{
+post-detail>.postArea>.replyList>span{
     font-size: 18px;
 }
-course-detail>.postArea>.replyList>li>.author{
+post-detail>.postArea>.replyList>li>.author{
     color:#10ae58;
 }
-course-detail>.postArea>.replyList>li>a{
+post-detail>.postArea>.replyList>li>a{
     display: none;
     float:right;
     margin-top: -20px;
@@ -88,26 +88,26 @@ course-detail>.postArea>.replyList>li>a{
     color:#8a8a8a;
     font-size: 12px;
 }
-course-detail>.postArea>.replyList>li:hover>a{
+post-detail>.postArea>.replyList>li:hover>a{
     display: block;
 }
-course-detail>.postArea>.replyList>li>a:hover{
+post-detail>.postArea>.replyList>li>a:hover{
     text-decoration: underline;
 }
-course-detail>.postArea>.replyList>li>.replyTime{
+post-detail>.postArea>.replyList>li>.replyTime{
     margin-left: 10px;
     font-size: 12px;
     color:#616161;
 }
 
 
-course-detail>.postArea>.replyBox{
+post-detail>.postArea>.replyBox{
     margin-top: 10px;
     margin-left: 5px;
     font-size: 14px;
 
 }
-course-detail>.postArea>.replyBox>button{
+post-detail>.postArea>.replyBox>button{
     display: block;
     margin-top: 10px;
     padding:8px 20px;
@@ -117,21 +117,21 @@ course-detail>.postArea>.replyBox>button{
     font-size: 14px;
 
 }
-course-detail>.postArea>.replyBox>textarea{
+post-detail>.postArea>.replyBox>textarea{
     width:300px;
 
 }
-course-detail>.postArea>ul{
+post-detail>.postArea>ul{
     list-style-type: none;
 }
 
 
-course-detail >.editArea {
+post-detail >.editArea {
     margin: 30px 0 0 0;
     padding: 0;
 }
 
-course-detail >.editArea> h1 {
+post-detail >.editArea> h1 {
     font-size: 18px;
     font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
     font-weight: normal;
@@ -139,25 +139,25 @@ course-detail >.editArea> h1 {
     margin: 10px 0 0 0;
 }
 
-course-detail >.editArea > .editor {
+post-detail >.editArea > .editor {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-course-detail >.editArea> .editor > li {
+post-detail >.editArea> .editor > li {
     padding: 10px 20px;
     margin: 0;
 }
 
-course-detail >.editArea > .editor > li:hover {
+post-detail >.editArea > .editor > li:hover {
     background: #eee;
 }
-course-detail >.editArea > .editor > li:last-child:hover{
+post-detail >.editArea > .editor > li:last-child:hover{
     background-color: white;
 }
 
-course-detail >.editArea > .editor > li > h2 {
+post-detail >.editArea > .editor > li > h2 {
     font-size: 14px;
     color: #666;
     font-weight: normal;
@@ -168,7 +168,7 @@ course-detail >.editArea > .editor > li > h2 {
 }
 
 
-course-detail >.editArea > .editor > li > input[type=text] {
+post-detail >.editArea > .editor > li > input[type=text] {
     display: block;
     height:30px;
     padding-left:5px;
@@ -181,7 +181,7 @@ course-detail >.editArea > .editor > li > input[type=text] {
 }
 
 
-course-detail >.editArea > .editor > li > textarea {
+post-detail >.editArea > .editor > li > textarea {
     vertical-align: middle;
     max-width: 400px;
     min-width: 400px;
@@ -189,10 +189,10 @@ course-detail >.editArea > .editor > li > textarea {
     min-height: 200px;
     border-radius: 2px;
 }
-course-detail >.editArea > .editor > li > #cke_editor3{
+post-detail >.editArea > .editor > li > #cke_editor3{
     margin-top: 15px;
 }
-course-detail >.editArea > .editor > li > button {
+post-detail >.editArea > .editor > li > button {
     font-size: 14px;
     padding: 8px 20px;
     background-color: #10ae58;

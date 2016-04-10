@@ -186,13 +186,23 @@
                     }
                 }
             })
-            .state('course.posts', {
+            .state('course.postList', {
                 url: '/posts',
                 templateUrl: '/components/post-list/post-list.html',
                 controller: 'postList',
                 resolve: {
-                    homework: function($ocLazyLoad){
+                    postList: function($ocLazyLoad){
                         return $ocLazyLoad.load(['postList'])
+                    }
+                }
+            })
+            .state('course.postDetail', {
+                url: '/posts/:post_id',
+                templateUrl: '/components/post-detail/post-detail.html',
+                controller: 'postDetail',
+                resolve: {
+                    postDetail: function($ocLazyLoad){
+                        return $ocLazyLoad.load(['postDetail'])
                     }
                 }
             })

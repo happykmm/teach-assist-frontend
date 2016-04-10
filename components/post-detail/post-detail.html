@@ -2,60 +2,62 @@
 
 <div class="alert" flash-message="2000"></div>
 
+<post-detail>
 
-<div class="postArea" ng-show="!isEdit">
-    <div class="postBox">
-        <h2>{{title}}<span class="author">by {{author}}</span></h2>
-        <div class="textCon" ng-bind-html="content">
-        </div>
-        <hr>
-        <div class="infoBox">
-            <a href="" ng-click="editPost()" ng-if="postOwner===users._id">编辑</a>
-            <a href="" ng-click="delPost()" ng-if="postOwner===users._id">删除</a>
-            <a href="" ng-click="makeTop()" ng-if="users.type==='teacher'" ng-class="{active:isTop}">置顶</a>
-            <a href="" class="countLike" ng-class="{active:isLike}" ng-click="like()">点赞: {{countLike}}</a>
-            <span class="countRead">浏览: {{countRead}}</span>
-            <span class="countReply">评论：{{countReply}}</span>
-        </div>
-        <button ng-click="goEditAnchor()">回复</button>
-    </div>
-
-
-    <ul class="replyList">
-        <span>所有回复</span>
-        <hr>
-        <li ng-repeat="reply in replyList track by $index ">
-            <div ng-bind-html="reply.content"></div>
-            <a href="javascript:void(0)" ng-if="reply.userId===users._id" ng-click="delReply($index)">删除</a>
-            <span class="author">{{reply.userName}}</span>
-            <span class="replyTime">{{reply.timestamp | date:'yyyy/M/d HH:mm'}}</span>
+    <div class="postArea" ng-show="!isEdit">
+        <div class="postBox">
+            <h2>{{title}}<span class="author">by {{author}}</span></h2>
+            <div class="textCon" ng-bind-html="content">
+            </div>
             <hr>
-        </li>
-    </ul>
+            <div class="infoBox">
+                <a href="" ng-click="editPost()" ng-if="postOwner===users._id">编辑</a>
+                <a href="" ng-click="delPost()" ng-if="postOwner===users._id">删除</a>
+                <a href="" ng-click="makeTop()" ng-if="users.type==='teacher'" ng-class="{active:isTop}">置顶</a>
+                <a href="" class="countLike" ng-class="{active:isLike}" ng-click="like()">点赞: {{countLike}}</a>
+                <span class="countRead">浏览: {{countRead}}</span>
+                <span class="countReply">评论：{{countReply}}</span>
+            </div>
+            <button ng-click="goEditAnchor()">回复</button>
+        </div>
 
-    <div class="replyBox" id="replyBox">
-        <p>回复</p>
-        <textarea ckeditor="editorOptions" ng-model="reply.content"></textarea>
-        <button class="submitBtn" ng-click="addReply()">发布</button>
+
+        <ul class="replyList">
+            <span>所有回复</span>
+            <hr>
+            <li ng-repeat="reply in replyList track by $index ">
+                <div ng-bind-html="reply.content"></div>
+                <a href="javascript:void(0)" ng-if="reply.userId===users._id" ng-click="delReply($index)">删除</a>
+                <span class="author">{{reply.userName}}</span>
+                <span class="replyTime">{{reply.timestamp | date:'yyyy/M/d HH:mm'}}</span>
+                <hr>
+            </li>
+        </ul>
+
+        <div class="replyBox" id="replyBox">
+            <p>回复</p>
+            <textarea ckeditor="editorOptions" ng-model="reply.content"></textarea>
+            <button class="submitBtn" ng-click="addReply()">发布</button>
+        </div>
     </div>
-</div>
 
 
-<div class="editArea" ng-show="isEdit">
-    <h1>编辑主题帖</h1>
-    <hr>
-    <ul class="editor">
-        <li>
-            <h2>标题</h2>
-            <input ng-model="title" type="text"/>
-        </li>
-        <li>
-            <h2>内容</h2>
-            <textarea ckeditor="editorOptions" ng-model="content"></textarea>
-        </li>
-        <li>
-            <button ng-click="updatePost()">发表</button>
-            <button ng-click="goBack()">放弃编辑</button>
-        </li>
-    </ul>
-</div>
+    <div class="editArea" ng-show="isEdit">
+        <h1>编辑主题帖</h1>
+        <hr>
+        <ul class="editor">
+            <li>
+                <h2>标题</h2>
+                <input ng-model="title" type="text"/>
+            </li>
+            <li>
+                <h2>内容</h2>
+                <textarea ckeditor="editorOptions" ng-model="content"></textarea>
+            </li>
+            <li>
+                <button ng-click="updatePost()">发表</button>
+                <button ng-click="goBack()">放弃编辑</button>
+            </li>
+        </ul>
+    </div>
+</post-detail>
