@@ -32,6 +32,7 @@
     "angular-carousel": "~1.0.1",
     "plupload": "~2.1.8",
     "qiniu": "~1.0.9-beta",
-    "ocLazyLoad":"~1.0.9"
+    "ocLazyLoad": "~1.0.9",
+    "angular-ui-router": "ui-router#~0.2.18"
   }
 }
