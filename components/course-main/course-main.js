@@ -11,16 +11,16 @@
     ]).controller("courseMain", courseMain);
 
 
-    function courseMain($scope, $state, $stateParams, $location, localStorageService) {
+    function courseMain($scope, $state, $stateParams, localStorageService) {
         //以下属性会继承给子控制器
         $scope.course_id = $stateParams.course_id;
         $scope.users = localStorageService.get("users");
-        $scope.param = "";
+        $scope.state = "";
 
         routeUpdate();
         $scope.$on('$locationChangeSuccess', routeUpdate);
         function routeUpdate() {
-            $scope.param = $state.current.url.replace("/","");
+            $scope.state = $state.current.name.replace("course.","");
         }
     }
 

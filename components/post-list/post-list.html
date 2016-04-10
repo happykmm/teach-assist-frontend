@@ -16,7 +16,10 @@
     <span ng-show="(!isEdit&&length===0)">欢迎大家来到讨论区！本讨论区供各位同学就课程问题进行交流学习。</span>
     <ul class="list" ng-show="!isEdit">
         <li ng-repeat="post in posts track by $index">
-            <a href="javascript:void(0)" ng-click="goDetail(post._id)">{{post.title}}<span ng-if="post.isTop" class="topTag">置顶</span></a>
+            <a ui-sref="course.postDetail({post_id: post._id})">
+                {{post.title}}
+                <span ng-if="post.isTop" class="topTag">置顶</span>
+            </a>
             <label>{{post.userName}} &nbsp;&nbsp;&nbsp;发表于 {{post.createdAt | date : 'yyyy/M/d HH:mm'}}  &nbsp;&nbsp;&nbsp;最后更新 {{post.updatedAt | date:'yyyy/M/d HH:mm'}}</label>
             <div class="right">
                 <label>浏览：{{post.countRead}}</label>

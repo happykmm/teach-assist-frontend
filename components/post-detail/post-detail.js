@@ -4,21 +4,13 @@
         'flash'
     ]).controller('postDetail', postDetail);
 
-    function postDetail($scope,$http,Flash,$location,$anchorScroll){
+    function postDetail($scope,$http,Flash,$location,$anchorScroll, $stateParams){
         var delayTime=5000,replyable=0;//delay reply control
         var oldTitle,oldContent;
-        $scope.idEdit=false;
+        $scope.idEdit = false;
+        $scope.post_id = $stateParams.post_id;
+        getDetail();
 
-        $scope.$on("$locationChangeSuccess",function(){
-            if($location.search().pid) {
-                $scope.post_id = $location.search().pid;
-                getDetail();
-            }
-        });
-        if($location.search().pid) {
-            $scope.post_id = $location.search().pid;
-            getDetail();
-        }
 
         $scope.like=function(){
             $http({

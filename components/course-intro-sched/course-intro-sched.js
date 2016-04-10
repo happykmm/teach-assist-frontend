@@ -1,6 +1,5 @@
 (function() {
 
-
     angular.module("courseIntroSched", [
         [
             'ckeditor',
@@ -8,31 +7,24 @@
         ]
 
     ]).controller("courseIntroSched", courseIntroSched);
-
-
-    // transclude: false,
-    // scope: {
-    //     param: "@", //@表示取字面值
-    //     users: "="  //=表示双向绑定
-    // },
-
     
-    function courseIntroSched($scope, $http, $stateParams) {
-        //$scope.param 继承
-        //$scope.course_id 继承
-        //$scope.users 继承
-        $scope.title = ($scope.param === "intro") ? "课程介绍" : "教学计划";
+    function courseIntroSched($scope, $http) {
+        // 从父控制器继承
+        // $scope.course_id = $stateParams.course_id;
+        // $scope.users = localStorageService.get("users");
+        // $scope.state = "";
+        $scope.title = ($scope.state === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;
         $scope.editorOptions = {};
 
         $http({
             method: "GET",
-            url: "API/courses/"+$scope.course_id+"/"+$scope.param
+            url: "API/courses/"+$scope.course_id+"/"+$scope.state
         }).then(function(res) {
             var result = res.data;
             if (result.code === 0) {
-                $scope.content = result[$scope.param];
+                $scope.content = result[$scope.state];
                 console.log(result);
             } else {
                 console.error(result);
@@ -43,10 +35,10 @@
 
         $scope.save = function() {
             var data = {};
-            data[$scope.param] = $scope.content;
+            data[$scope.state] = $scope.content;
             $http({
                 method: "PUT",
-                url: "API/courses/"+$scope.course_id+"/"+$scope.param,
+                url: "API/courses/"+$scope.course_id+"/"+$scope.state,
                 data: data
             }).then(function(res) {
                 var result = res.data;

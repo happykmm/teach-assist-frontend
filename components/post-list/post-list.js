@@ -19,10 +19,6 @@
             $scope.isEdit=false;
         };
 
-        $scope.goDetail=function(post_id){
-            $location.search({'param':'detail','pid':post_id});
-        };
-
         $scope.filterPost=filterPost;
 
         $scope.add = function() {
