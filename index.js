@@ -41,6 +41,7 @@
         $ocLazyLoadProvider.config({
             debug: false,
             modules: [
+                //ckeditor is already compressed.
                 {name:"ckeditor", files:["//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js"]},
                 {name:"plupload", files:["//cdn.bootcss.com/plupload/2.1.8/plupload.full.min.js"]},
                 {name:"Qiniu", files:["/bower_components/qiniu/src/qiniu.min.js"]},

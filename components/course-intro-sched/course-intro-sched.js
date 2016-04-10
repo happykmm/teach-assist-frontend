@@ -7,7 +7,7 @@
         ]
     ]).controller("courseIntroSched", courseIntroSched);
     
-    function courseIntroSched($scope, $http, $state) {
+    function courseIntroSched($scope, $http) {
         // 从父控制器继承
         // $scope.course_id
         // $scope.users
