@@ -188,6 +188,15 @@
                         "/components/self/self.css",
                         "/components/self/self.js"
                     ]
+                },
+                {
+                    name:"404",
+                    files:[
+                        "/components/404/404.css",
+                        "/components/404/game.js",
+                        "/components/404/404.js"
+                    ],
+                    serie: true
                 }
             ]
         })
@@ -207,7 +216,8 @@
 
     //config router
     app.config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.when('', '/');
+        $urlRouterProvider.otherwise('/404');
 
         $stateProvider
             .state('main', {
@@ -355,6 +365,16 @@
                             ['ngCkeditor','self'],
                             {serie: true}
                         )
+                    }
+                }
+            })
+            .state('404', {
+                url:'/404',
+                templateUrl: '/components/404/404.html',
+                controller: '404',
+                resolve: {
+                    http404: function($ocLazyLoad){
+                        return $ocLazyLoad.load(['404']);
                     }
                 }
             });
