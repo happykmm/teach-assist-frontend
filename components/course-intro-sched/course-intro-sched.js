@@ -13,7 +13,7 @@
         $scope.title = ($scope.state === "intro") ? "课程介绍" : "教学计划";
         $scope.content = null;
         $scope.isEdit = false;
-        $scope.editorOptions = {};
+        $scope.editorOptions = {};   //ngCkeditor必要配置
 
         $http({
             method: "GET",

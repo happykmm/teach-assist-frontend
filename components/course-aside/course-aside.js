@@ -24,6 +24,7 @@
                         $scope.state = toState.name.replace("course.", "");
                     });
                 
+                //注销事件监听，否则会导致内存泄露
                 $scope.$on('$destroy', function() {
                     cleanUp();
                 });
