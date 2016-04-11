@@ -1,13 +1,6 @@
 post-list {
     display: block;
-    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
-}
-
-post-list > .alert {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    right: 0;
+    font-family: 'Arial', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Helvetica', sans-serif;
 }
 
 post-list > .topBtn{

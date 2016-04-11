@@ -3,29 +3,36 @@ course-main {
     min-width: 800px;
 }
 
-course-main > main {
+course-main > div[ui-view] {
     display: block;
     padding: 20px 40px 0 280px;
 }
 
-course-main > main hr {
+course-main > div[ui-view] hr {
     border: 0;
     height: 1px;
     background: #eee;
 }
 
 
-course-main > main > * {
+course-main > div[ui-view] > * {
     display: block;
     position: relative;
     top: 0;
     left: 0;
 }
 
-course-main > main > *  > h1 {
+course-main > div[ui-view] > *  > h1 {
     font-size: 18px;
     font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, Helvetica, sans-serif;
     font-weight: normal;
     display: inline-block;
     margin: 10px 0 0 0;
+}
+
+course-main > div[ui-view] > *  > .alert {
+    position: fixed;
+    right: 0;
+    top: 0px;
+    z-index: 9999;
 }

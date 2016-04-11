@@ -2,12 +2,7 @@ course-ware {
     display: block;
 }
 
-course-ware > .alert {
-    position: fixed;
-    right: 0;
-    top: 0px;
-    z-index: 9999;
-}
+
 
 course-ware > .add > h1 {
     font-size: 18px;
