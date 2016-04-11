@@ -21,9 +21,7 @@
                 
                 var cleanUp = $rootScope.$on('$stateChangeStart',
                     function(event, toState, toParams, fromState, fromParams, options){
-                        console.log(toState);
                         $scope.state = toState.name.replace("course.", "");
-                        console.log($scope.state);
                     });
                 
                 $scope.$on('$destroy', function() {
