@@ -1,25 +1,29 @@
+course-aside {
+    display: block;
+}
 
-course-aside  {
+
+course-aside > .wrap  {
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 250px;
     background: #eee;
     padding: 72px 10px 0 10px;
-    z-index: 0;
+    z-index: 998;
     display: block;
 }
 
-course-aside  > ul {
+course-aside > .wrap  > ul {
     list-style-type: none;
     background: #fff;
     padding: 0;
     margin: 15px 0;
 }
 
-course-aside  > ul > li {
+course-aside > .wrap  > ul > li {
     height: 50px;
     line-height: 50px;
     border-bottom: 1px solid #eee;
@@ -29,17 +33,17 @@ course-aside  > ul > li {
     cursor: pointer;
 }
 
-course-aside  > ul > li:hover {
+course-aside > .wrap  > ul > li:hover {
     color: rgb(19, 166, 84);
     background: #eee;
 }
 
-course-aside > ul > li.active {
+course-aside > .wrap > ul > li.active {
     background: #10ae58;
     color: #fff;
 }
 
-course-aside  > .picture {
+course-aside > .wrap  > .picture {
     background: url("http://7xpijn.com1.z0.glb.clouddn.com/spoc.png") center no-repeat;
     background-size: cover;
     border-radius: 5px;
@@ -47,7 +51,7 @@ course-aside  > .picture {
     height: 130px;
 }
 
-course-aside  > a {
+course-aside > .wrap  > a {
     padding: 0 20px;
     text-decoration: none;
     color: rgb(16, 174, 88);

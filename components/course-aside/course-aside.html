@@ -1,35 +1,36 @@
-<div class="picture"></div>
-<div class="process"></div>
-<ul>
-    <li ui-sref="course.teacher"
-        ng-class="{active: state==='teacher'}"
-        ng-show="users.type==='student'">
-        教师介绍
-    </li>
-    <li ui-sref="course.intro"
-        ng-class="{active: state==='intro' || state===''}">
-        课程介绍
-    </li>
-    <li ui-sref="course.sched"
-        ng-class="{active: state==='sched'}">
-        教学计划
-    </li>
-    <li ui-sref="course.students"
-        ng-class="{active: state==='students'}"
-        ng-show="users.type==='teacher'">
-        学生管理
-    </li>
-    <li ui-sref="course.ware"
-        ng-class="{active: state==='ware'}">
-        课件
-    </li>
-    <li ui-sref="course.homework"
-        ng-class="{active: state==='homework'}">
-        作业
-    </li>
-    <li ui-sref="course.postList"
-        ng-class="{active: state==='postList' || state==='postDetail'}">
-        讨论区
-    </li>
-</ul>
-<a href="">帮助中心</a>
+<div class="wrap">
+    <div class="picture"></div>
+    <ul>
+        <li ui-sref="course.teacher"
+            ng-class="{active: state==='teacher'}"
+            ng-show="users.type==='student'">
+            教师介绍
+        </li>
+        <li ui-sref="course.intro"
+            ng-class="{active: state==='intro' || state===''}">
+            课程介绍
+        </li>
+        <li ui-sref="course.sched"
+            ng-class="{active: state==='sched'}">
+            教学计划
+        </li>
+        <li ui-sref="course.students"
+            ng-class="{active: state==='students'}"
+            ng-show="users.type==='teacher'">
+            学生管理
+        </li>
+        <li ui-sref="course.ware"
+            ng-class="{active: state==='ware'}">
+            课件
+        </li>
+        <li ui-sref="course.homework"
+            ng-class="{active: state==='homework'}">
+            作业
+        </li>
+        <li ui-sref="course.postList"
+            ng-class="{active: state==='postList' || state==='postDetail'}">
+            讨论区
+        </li>
+    </ul>
+    <a href="">帮助中心</a>
+</div>

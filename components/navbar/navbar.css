@@ -1,12 +1,19 @@
 navbar {
     display: block;
-    position: relative;
-    left: 0;
-    top: 0;
-    z-index: 100;
 }
 
+navbar > .padding {
+    height: 40px;
+    padding: 10px 0;
+}
+
+
 navbar > .wrap {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
     display: block;
     height: 40px;
     padding: 10px 0;
