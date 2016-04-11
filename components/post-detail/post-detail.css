@@ -1,12 +1,6 @@
 post-detail{
     font-family: "Microsoft Yahei", "Helvetica Neue", "Microsoft YaHei Light", Helvetica, Arial, sans-serif;
 }
-post-detail > .alert {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    right: 0;
-}
 post-detail>.postArea>.postBox{
     padding:5px 20px 20px 20px;
     background-color: #f8f8f8;
