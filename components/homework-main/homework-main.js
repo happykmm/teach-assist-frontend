@@ -77,7 +77,7 @@
             method: 'GET',
             url: 'API/homework/'+$scope.course_id
         }).then(function(res) {
-            $scope.homework = result.homework;
+            $scope.homework = res.data.homework;
         });
 
     }
