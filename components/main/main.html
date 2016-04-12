@@ -1,9 +1,8 @@
 <main>
     <div class="logo">
-        <a ng-show="!users" href="javascript:void(0)" class="login" ng-click="login()">登 录</a>
-        <usericon ng-show="users"></usericon>
+        <a ng-show="!user" href="javascript:void(0)" ui-sref="login" class="login">登 录</a>
+        <usericon ng-show="user"></usericon>
     </div>
-
 
     <ul class="carousel"
         rn-carousel
@@ -16,10 +15,12 @@
             <div style="background-image: url('{{image}}')"></div>
         </li>
     </ul>
+
     <ul class="link">
         <li>友情链接：</li>
         <li><a href="http://jwbinfosys.zju.edu.cn/default2.aspx">教务管理系统</a></li>
         <li><a href="http://cspo.zju.edu.cn">计算机学院</a></li>
         <li><a href="http://www.cc98.org">CC98</a></li>
     </ul>
+
 </main>

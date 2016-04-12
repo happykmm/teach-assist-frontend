@@ -10,31 +10,63 @@
         'flash'                 //全局alert
     ]);
 
-    //set API baseURL
+
+    app.factory('userService', function(localStorageService) {
+        var userCache = localStorageService.get("user") || {};
+        return function(userInfo) {
+            //getter
+            if (userInfo === undefined)  return userCache;
+            //setter
+            userCache = userInfo || {};
+            localStorageService.set("user", userCache);
+        }
+    });
+
+    // //add x-access-token header
+    // app.run(function ($http, userService) {
+    //     var user = userService();
+    //     if (user && user.token) {
+    //         console.log("set header x-access-token: " + user.token);
+    //         $http.defaults.headers.common["x-access-token"] = user.token;
+    //     }
+    // });
+
+
     app.config(function ($httpProvider) {
-        $httpProvider.interceptors.push(function ($q) {
+        //set API baseURL and x-access-token
+        $httpProvider.interceptors.push(function ($q, userService) {
             return {
                 'request': function (config) {
-                    if (DEBUG === true)
-                        config.url = config.url.replace("API", "https://localhost:9999");
-                    else
-                        config.url = config.url.replace("API", "https://teachassist.xyz:9999");
-                    // console.log(config.url);
+                    if (config.url.match(/^API/)) {
+                        config.api = true;
+                        config.url = config.url.replace(/^API/,
+                            DEBUG ? "https://localhost:9999" :　"https://teachassist.xyz:9999");
+                        config.headers["x-access-token"] = userService().token;
+                    }
                     return config || $q.when(config);
                 }
             }
-        })
+        });
+        //global error handler
+        $httpProvider.interceptors.push(function ($q, $log) {
+            return {
+                'response': function(response) {
+                    if (response.config.api) {
+                        $log.warn(response);
+                    }
+                    return response || $q.when(response);
+                },
+                'responseError': function(rejection) {
+                    if (rejection.config.api) {
+                        $log.error(rejection);
+                    }
+                    return $q.reject(rejection);
+                }
+            }
+        });
     });
 
 
-    //add x-access-token header
-    app.run(function ($http, localStorageService) {
-        var users = localStorageService.get("users");
-        if (users && users.token) {
-            console.log("set header x-access-token: " + users.token);
-            $http.defaults.headers.common["x-access-token"] = users.token;
-        }
-    });
 
 
     //config lazy-load modules
@@ -204,17 +236,6 @@
     });
 
 
-    //Redirect a state to default substate
-    app.run(function($rootScope, $state) {
-        $rootScope.$on('$stateChangeStart', function(event, toState, params) {
-            if (toState.redirectTo) {
-                event.preventDefault();
-                $state.go(toState.redirectTo, params);
-            }
-        });
-    });
-
-
     //config router
     app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('', '/');
@@ -381,6 +402,16 @@
             });
     });
 
+
+    //Redirect a state to default substate
+    app.run(function($rootScope, $state) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, params) {
+            if (toState.redirectTo) {
+                event.preventDefault();
+                $state.go(toState.redirectTo, params);
+            }
+        });
+    });
 
 
 })();

@@ -2,7 +2,7 @@
 
     angular.module("courseMain", [
         'ui.router',
-        'LocalStorageModule',
+        'teachAssist',
         [
             'navbar',
             'usericon',
@@ -11,10 +11,10 @@
     ]).controller("courseMain", courseMain);
 
 
-    function courseMain($scope, $stateParams, localStorageService) {
+    function courseMain($scope, $stateParams, userService) {
         //以下属性会继承给子控制器
         $scope.course_id = $stateParams.course_id;
-        $scope.users = localStorageService.get("users");
+        $scope.users = userService();
 
     }
 

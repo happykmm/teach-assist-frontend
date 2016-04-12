@@ -1,11 +1,11 @@
 (function() {
 
     angular.module('login', [
-        'LocalStorageModule',
+        'teachAssist',
         'ui.router'
     ]).controller('login', login);
 
-    function login($scope, $http, $timeout, $location, localStorageService) {
+    function login($scope, $http, $timeout, $location, userService) {
         $scope.errorMessage = null;
         $scope.submit = function () {
             if (!$scope.username || !$scope.password) {
@@ -23,8 +23,7 @@
                 var result = res.data;
                 if (result.code === 0) {
                     console.log("Login success, token=" + result.token);
-                    localStorageService.set("users", result);
-                    $http.defaults.headers.common["x-access-token"] = result.token;
+                    userService(result);
                     $location.url('/courses');
                 } else {
                     $scope.errorMessage = result.desc;

@@ -1,25 +1,22 @@
 (function() {
 
     angular.module('usericon', [
-        'LocalStorageModule'
+        'teachAssist',
+        'ui.router'
     ]).directive('usericon', usericon);
 
     function usericon() {
         return {
             templateUrl: '/components/usericon/usericon.html',
             transclude: false,
-            controller: function($scope, $location, $http, localStorageService) {
-                $scope.logout = function() {
-                    localStorageService.remove('users');
-                    delete $http.defaults.headers.common["x-access-token"];
-                    $location.path('/login').search({});
-                }
-
+            controller: function($scope, $state, $http, userService) {
                 $scope.isMore = false;
-                $scope.linkTo = function(path) {
-                    $location.path(path).search({});
+                $scope.user = userService();
+                
+                $scope.logout = function() {
+                    userService(null);
+                    $state.go("login");
                 }
-
             }
         }
     }

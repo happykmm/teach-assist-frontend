@@ -14,6 +14,11 @@
         $scope.content = null;
         $scope.isEdit = false;
         $scope.editorOptions = {};   //ngCkeditor必要配置
+        //
+        // setInterval(function() {
+        //     console.log($scope.state);
+        //     console.log($scope.content);
+        // }, 3000);
 
         $http({
             method: "GET",
