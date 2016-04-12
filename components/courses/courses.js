@@ -30,18 +30,8 @@
                     name: $scope.newName
                 }
             }).then(function(res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    console.log(result);
-                    $scope.courses.push(result.content[0]);
-                    $scope.newName = "";
-                } else {
-                    console.error(result);
-                    Flash.create("danger", result.desc);
-                }
-            }, function(err) {
-                console.error(err);
-                Flash.create("danger", "网络错误，请稍后重试");
+                $scope.courses.push(res.data.content[0]);
+                $scope.newName = "";
             });
         };
 
@@ -55,17 +45,7 @@
                     _id: $scope.courses[$index]._id
                 }
             }).then(function (res) {
-                console.log(res);
-                var result = res.data;
-                if (result.code === 0) {
-                    $scope.courses.splice($index, 1);
-                } else {
-                    console.error(result);
-                    Flash.create("danger", result.desc);
-                }
-            }, function(err) {
-                console.error(err);
-                Flash.create("danger", "网络错误，请稍后重试");
+                $scope.courses.splice($index, 1);
             })
         };
 
@@ -73,14 +53,7 @@
             method: "GET",
             url: "API/courses"
         }).then(function (res) {
-            var result = res.data;
-            if (result.code === 0) {
-                console.log(result);
-                $scope.courses = result.content;
-            } else {
-                console.error(result);
-                Flash.create("danger", result.desc);
-            }
+            $scope.courses = res.data.content;
         });
     }
 

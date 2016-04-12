@@ -10,13 +10,7 @@
             'moment'
         ]
     ]).controller("homework", function() {
-        // return {
-        //     templateUrl: "/components/homework/homework.html",
-        //     transclude: false,
-        //     controller: function() {
-        //
-        //     }
-        // }
+        //nothing to do here
     });
 
 

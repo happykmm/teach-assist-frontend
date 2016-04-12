@@ -39,19 +39,12 @@
                     content: $scope.new.content
                 }
             }).then(function(res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    $scope.isEdit=false;
-                    $scope.posts.push(result.post);
-                    $scope.length=$scope.posts.length;
-                    $scope.new.title="";
-                    $scope.new.content="";
-                    Flash.create("success", "发表成功！");
-                } else {
-                    console.error(result.desc);
-                }
-            }, function(err) {
-                console.error(err);
+                $scope.isEdit=false;
+                $scope.posts.push(res.data.post);
+                $scope.length=$scope.posts.length;
+                $scope.new.title="";
+                $scope.new.content="";
+                Flash.create("success", "发表成功！");
             })
         };
 
@@ -62,16 +55,9 @@
                 method: 'GET',
                 url: 'API/posts/' + $scope.course_id
             }).then(function (res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    $scope.posts = result.posts;
-                    $scope.length=$scope.posts.length;
-                    filterPost('createdAt');
-                } else {
-                    console.error(result);
-                }
-            }, function (err) {
-                console.error(err);
+                $scope.posts = res.data.posts;
+                $scope.length=$scope.posts.length;
+                filterPost('createdAt');
             });
         }
 

@@ -13,17 +13,8 @@
                     method: 'GET',
                     url: 'API/courses/'+$scope.course_id+'/teacher'
                 }).then(function(res) {
-                    var result = res.data;
-                    if (result.code === 0) {
-                        $scope.intro = result.intro;
-                    } else {
-                        console.error(result);
-                    }
-                }, function(err) {
-                    console.error(err);
+                    $scope.intro = res.data.intro;
                 })
-
-
             }
         }
     }

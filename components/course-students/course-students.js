@@ -42,8 +42,6 @@
                 if (!isExist)
                     $scope.students.push(newStudent);
                 $scope.newStudent = null;
-            }, function(err) {
-                console.log(err);
             });
         }
 
@@ -56,16 +54,7 @@
                     students: [_id]
                 }
             }).then(function(res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    console.log($scope.students);
-                    $scope.students.splice($index, 1);
-                    console.log($scope.students);
-                } else {
-                    console.error(res);
-                }
-            }, function(err) {
-                console.error(err);
+                $scope.students.splice($index, 1);
             })
         }
 
@@ -73,10 +62,7 @@
             method: 'GET',
             url: "API/courses/"+$scope.course_id+"/students"
         }).then(function(res) {
-            var result = res.data;
-            $scope.students = result.students;
-        }, function(err) {
-            console.error(err);
+            $scope.students = res.data.students;
         });
 
     }

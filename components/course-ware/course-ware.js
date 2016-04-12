@@ -19,31 +19,15 @@
                     storename: $scope.ppts[$index].storename
                 }
             }).then(function(res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    $scope.ppts.splice($index, 1);
-                } else {
-                    console.error(result);
-                }
-            }, function(err) {
-                console.error(err);
+                $scope.ppts.splice($index, 1);
             })
-
         };
-
 
         $http({
             method: 'GET',
             url: 'API/ppt/'+$scope.course_id
         }).then(function(res) {
-            var result = res.data;
-            if (result.code === 0) {
-                $scope.ppts = result.ppt;
-            } else {
-                console.error(result);
-            }
-        }, function(err) {
-            console.error(err);
+            $scope.ppts = res.data.ppt;
         });
 
 
@@ -51,14 +35,7 @@
             method: 'GET',
             url: 'API/ppt/token'
         }).then(function(res) {
-            var result = res.data;
-            if (result.code === 0) {
-                qiniuInit(result.token);
-            } else {
-                console.error(result);
-            }
-        }, function(err) {
-            console.error(err);
+            qiniuInit(res.datatoken);
         });
 
         function qiniuInit(token) {

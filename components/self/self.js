@@ -24,9 +24,7 @@
                     intro: $scope.intro
                 }
             }).then(function(res) {
-                console.log(res);
-            }, function(err) {
-                console.error(err);
+                //nothing to do here
             })
         };
 
@@ -34,14 +32,7 @@
             method: 'GET',
             url: 'API/self'
         }).then(function(res) {
-            var result = res.data;
-            if (result.code === 0) {
-                $scope.intro = result.intro;
-            } else {
-                console.error(result);
-            }
-        }, function(err) {
-            console.error(err);
+            $scope.intro = res.data.intro;
         })
 
     }

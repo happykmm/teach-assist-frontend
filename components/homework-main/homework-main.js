@@ -54,16 +54,9 @@
                 url: 'API/homework/'+$scope.course_id,
                 data: data
             }).then(function(res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    $scope.homework.push(result.content[0]);
-                    $scope.newHW = newHW();
-                    $scope.isEdit = false;
-                } else {
-                    console.error(result);
-                }
-            }, function(err) {
-                console.error(err);
+                $scope.homework.push(res.data.content[0]);
+                $scope.newHW = newHW();
+                $scope.isEdit = false;
             })
         };
 
@@ -75,15 +68,8 @@
                     homework_id: $scope.homework[$index]._id
                 }
             }).then(function(res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    $scope.homework.splice($index, 1);
-                    Flash.create('success', "删除成功");
-                } else {
-                    Flash.create('danger', result.desc);
-                }
-            }, function(err) {
-                console.error(err);
+                $scope.homework.splice($index, 1);
+                Flash.create('success', "删除成功");
             })
         };
 
@@ -91,16 +77,7 @@
             method: 'GET',
             url: 'API/homework/'+$scope.course_id
         }).then(function(res) {
-            var result = res.data;
-            if (result.code === 0) {
-                console.log(result);
-                $scope.homework = result.homework;
-            } else {
-                console.error(result);
-                Flash.create('danger', result.desc);
-            }
-        }, function(err) {
-            console.error(err);
+            $scope.homework = result.homework;
         });
 
     }
