@@ -29,10 +29,3 @@ course-main > div[ui-view] > *  > h1 {
     display: inline-block;
     margin: 10px 0 0 0;
 }
-
-course-main > div[ui-view] > *  > .alert {
-    position: fixed;
-    right: 0;
-    top: 0px;
-    z-index: 9999;
-}

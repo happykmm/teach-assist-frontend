@@ -10,3 +10,11 @@
 body {
     margin: 0;
 }
+
+
+body > .alert {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: 9999;
+}

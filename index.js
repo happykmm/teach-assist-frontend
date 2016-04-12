@@ -6,7 +6,8 @@
         'LocalStorageModule',
         'ngSanitize',           //必须在app定义时声明
         'ui.router',
-        'oc.lazyLoad'
+        'oc.lazyLoad',
+        'flash'                 //全局alert
     ]);
 
     //set API baseURL
@@ -36,10 +37,10 @@
     });
 
 
-    //config dependencies
+    //config lazy-load modules
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
-            debug: false,
+            debug: true,
             modules: [
                 {
                     name:"ngCkeditor",
