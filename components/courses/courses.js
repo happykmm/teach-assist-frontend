@@ -81,9 +81,6 @@
                 console.error(result);
                 Flash.create("danger", result.desc);
             }
-        }, function(err) {
-            console.error(err);
-            Flash.create("danger", "网络错误，请稍后重试");
         });
     }
 

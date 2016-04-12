@@ -22,15 +22,6 @@
         }
     });
 
-    // //add x-access-token header
-    // app.run(function ($http, userService) {
-    //     var user = userService();
-    //     if (user && user.token) {
-    //         console.log("set header x-access-token: " + user.token);
-    //         $http.defaults.headers.common["x-access-token"] = user.token;
-    //     }
-    // });
-
 
     app.config(function ($httpProvider) {
         //set API baseURL and x-access-token
@@ -48,17 +39,29 @@
             }
         });
         //global error handler
-        $httpProvider.interceptors.push(function ($q, $log) {
+        $httpProvider.interceptors.push(function ($q, $log, Flash, $location) {
             return {
                 'response': function(response) {
                     if (response.config.api) {
-                        $log.warn(response);
+                        if (response.data.code !== 0) {
+                            $log.error(response);
+                            Flash.create("danger", response.data.desc);
+                        }
                     }
                     return response || $q.when(response);
                 },
                 'responseError': function(rejection) {
                     if (rejection.config.api) {
                         $log.error(rejection);
+                        switch (rejection.status) {
+                            case 401:
+                                Flash.create("danger", "请登录！");
+                                $location.path("/login");
+                                break;
+                            default:
+                                Flash.create("danger", "网络错误("+rejection.status+")，请重试！");
+                                break;
+                        }
                     }
                     return $q.reject(rejection);
                 }
@@ -67,12 +70,10 @@
     });
 
 
-
-
     //config lazy-load modules
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
-            debug: true,
+            debug: false,
             modules: [
                 {
                     name:"ngCkeditor",
