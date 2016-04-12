@@ -31,8 +31,6 @@
             } else {
                 console.error(result);
             }
-        }, function(err) {
-            console.error(err);
         });
 
         $scope.save = function() {

@@ -46,6 +46,7 @@
                         if (response.data.code !== 0) {
                             $log.error(response);
                             Flash.create("danger", response.data.desc);
+                            return $q.reject(response);
                         }
                     }
                     return response || $q.when(response);

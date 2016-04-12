@@ -25,14 +25,7 @@
                     console.log("Login success, token=" + result.token);
                     userService(result);
                     $location.url('/courses');
-                } else {
-                    $scope.errorMessage = result.desc;
-                    $timeout(function() {
-                        $scope.errorMessage = null;
-                    }, 2000);
-                }
-            }, function (err) {
-                console.error(err);
+                } 
             });
         }
     }
