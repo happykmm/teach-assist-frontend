@@ -24,13 +24,7 @@
             method: "GET",
             url: "API/courses/"+$scope.course_id+"/"+$scope.state
         }).then(function(res) {
-            var result = res.data;
-            if (result.code === 0) {
-                $scope.content = result[$scope.state];
-                console.log(result);
-            } else {
-                console.error(result);
-            }
+            $scope.content = res.data[$scope.state];
         });
 
         $scope.save = function() {
@@ -41,11 +35,7 @@
                 url: "API/courses/"+$scope.course_id+"/"+$scope.state,
                 data: data
             }).then(function(res) {
-                var result = res.data;
-                if (result.code !== 0)
-                    console.error(result);
-            }, function(err) {
-                console.error(err);
+                //nothing to do here
             })
         }
     }

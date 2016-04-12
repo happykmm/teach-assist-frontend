@@ -5,7 +5,7 @@
         'ui.router'
     ]).controller('login', login);
 
-    function login($scope, $http, $timeout, $location, userService) {
+    function login($scope, $http, $state, userService) {
         $scope.errorMessage = null;
         $scope.submit = function () {
             if (!$scope.username || !$scope.password) {
@@ -20,12 +20,8 @@
                     password: $scope.password
                 }
             }).then(function (res) {
-                var result = res.data;
-                if (result.code === 0) {
-                    console.log("Login success, token=" + result.token);
-                    userService(result);
-                    $location.url('/courses');
-                } 
+                userService(res.data);
+                $state.go('courses');
             });
         }
     }
