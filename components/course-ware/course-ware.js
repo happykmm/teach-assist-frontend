@@ -35,7 +35,7 @@
             method: 'GET',
             url: 'API/ppt/token'
         }).then(function(res) {
-            qiniuInit(res.datatoken);
+            qiniuInit(res.data.token);
         });
 
         function qiniuInit(token) {
