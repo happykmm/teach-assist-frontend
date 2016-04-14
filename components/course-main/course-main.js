@@ -16,6 +16,9 @@
         $scope.course_id = $stateParams.course_id;
         $scope.users = userService();
 
+        // setInterval(function() {
+        //     console.error($scope.state);
+        // }, 1000);
     }
 
 })();

@@ -3,7 +3,7 @@
     <ul>
         <li ui-sref="course.teacher"
             ng-class="{active: state==='teacher'}"
-            ng-show="users.type==='student'">
+            ng-show="user.type==='student'">
             教师介绍
         </li>
         <li ui-sref="course.intro"
@@ -16,7 +16,7 @@
         </li>
         <li ui-sref="course.students"
             ng-class="{active: state==='students'}"
-            ng-show="users.type==='teacher'">
+            ng-show="user.type==='teacher'">
             学生管理
         </li>
         <li ui-sref="course.ware"

@@ -9,14 +9,12 @@
         return {
             templateUrl: "/components/course-aside/course-aside.html",
             transclude: false,
-            // scope: {
-            //     param: "@", //@表示取字面值
-            //     users: "="  //=表示双向绑定
-            // },
+            scope: {
+                // scope 表示建立独立作用域
+                // param: "@", //@表示取字面值
+                user: "="  //=表示双向绑定
+            },
             controller: function($scope, $state, $rootScope) {
-                // 从父控制器继承
-                // $scope.course_id
-                // $scope.users
                 $scope.state = $state.current.name.replace("course.", "");
                 
                 var cleanUp = $rootScope.$on('$stateChangeStart',
