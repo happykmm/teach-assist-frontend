@@ -9,7 +9,7 @@
             method: 'GET',
             url: 'API/courses/'+$scope.course_id+'/teacher'
         }).then(function(res) {
-            $scope.intro = res.data.intro;
+            $scope.content = res.data.content;
         })
 
     }

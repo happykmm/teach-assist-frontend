@@ -407,13 +407,23 @@
                 }
             })
             .state('self', {
-                url:'/self',
+                url: '/self',
                 templateUrl: '/components/self/self.html',
                 controller: 'self',
-                resolve:{
+                resolve: {
                     self: function($ocLazyLoad){
+                        return $ocLazyLoad.load(['self'])
+                    }
+                }
+            })
+            .state('self.edit', {
+                url: '/edit',
+                templateUrl: '/components/edit/edit.html',
+                controller: 'edit',
+                resolve: {
+                    edit: function($ocLazyLoad) {
                         return $ocLazyLoad.load(
-                            ['ngCkeditor','self'],
+                            ['ngCkeditor', 'edit'],
                             {serie: true}
                         )
                     }
