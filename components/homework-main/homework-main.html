@@ -13,7 +13,7 @@
             <label ng-click="showDetail($index)">
                 <i>&#xe608</i>查看
             </label>
-            <label ng-click="delHW($index)" ng-show="users.type==='teacher'">
+            <label ng-click="delHW($index)" ng-show="user.type==='teacher'">
                 <i>&#xe604</i>删除
             </label>
         </h4>
@@ -21,7 +21,7 @@
     </li>
 </ul>
 
-<div class="add" ng-show="users.type==='teacher'">
+<div class="add" ng-show="user.type==='teacher'">
     <h1 ng-click="isEdit=!isEdit">添加作业</h1>
     <ul>
         <li ng-show="!isEdit" ng-click="isEdit=true">

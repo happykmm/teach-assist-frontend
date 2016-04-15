@@ -11,6 +11,8 @@
 
     function courseWare($scope, $http, Flash) {
 
+        console.log($scope.user);
+
         $scope.del = function($index) {
             $http({
                 method: 'DELETE',

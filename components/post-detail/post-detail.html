@@ -6,9 +6,9 @@
             </div>
             <hr>
             <div class="infoBox">
-                <a href="" ng-click="editPost()" ng-if="postOwner===users._id">编辑</a>
-                <a href="" ng-click="delPost()" ng-if="postOwner===users._id">删除</a>
-                <a href="" ng-click="makeTop()" ng-if="users.type==='teacher'" ng-class="{active:isTop}">置顶</a>
+                <a href="" ng-click="editPost()" ng-if="postOwner===user._id">编辑</a>
+                <a href="" ng-click="delPost()" ng-if="postOwner===user._id">删除</a>
+                <a href="" ng-click="makeTop()" ng-if="user.type==='teacher'" ng-class="{active:isTop}">置顶</a>
                 <a href="" class="countLike" ng-class="{active:isLike}" ng-click="like()">点赞: {{countLike}}</a>
                 <span class="countRead">浏览: {{countRead}}</span>
                 <span class="countReply">评论：{{countReply}}</span>
@@ -22,7 +22,7 @@
             <hr>
             <li ng-repeat="reply in replyList track by $index ">
                 <div ng-bind-html="reply.content"></div>
-                <a href="javascript:void(0)" ng-if="reply.userId===users._id" ng-click="delReply($index)">删除</a>
+                <a href="javascript:void(0)" ng-if="reply.userId===user._id" ng-click="delReply($index)">删除</a>
                 <span class="author">{{reply.userName}}</span>
                 <span class="replyTime">{{reply.timestamp | date:'yyyy/M/d HH:mm'}}</span>
                 <hr>
