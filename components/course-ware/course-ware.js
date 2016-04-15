@@ -1,17 +1,10 @@
 (function() {
 
     angular.module('courseWare', [
-        'flash',
-        [
-            'plupload',
-            'Qiniu'
-        ]
-
+        'flash'
     ]).controller('courseWare', courseWare);
 
-    function courseWare($scope, $http, Flash) {
-
-        console.log($scope.user);
+    function courseWare($scope, $http, Flash, $ocLazyLoad) {
 
         $scope.del = function($index) {
             $http({
@@ -25,6 +18,7 @@
             })
         };
 
+
         $http({
             method: 'GET',
             url: 'API/ppt/'+$scope.course_id
@@ -32,13 +26,21 @@
             $scope.ppts = res.data.ppt;
         });
 
+        if ($scope.user.type === 'teacher') {
+            $ocLazyLoad.load([
+                'plupload',
+                'Qiniu'
+            ]).then(function() {
+                $http({
+                    method: 'GET',
+                    url: 'API/ppt/token'
+                }).then(function(res) {
+                    qiniuInit(res.data.token);
+                });
+            });
+        }
 
-        $http({
-            method: 'GET',
-            url: 'API/ppt/token'
-        }).then(function(res) {
-            qiniuInit(res.data.token);
-        });
+
 
         function qiniuInit(token) {
             Qiniu.uploader({
@@ -60,7 +62,7 @@
                 chunk_size: '4mb',                //分块上传时，每片的体积
                 auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
                 x_vars: {
-                    course_id: $scope._id
+                    course_id: $scope.course_id
                 },
                 init: {
                     'FilesAdded': function(up, files) {
@@ -74,9 +76,12 @@
                         // 每个文件上传时,处理相关的事情
                     },
                     'FileUploaded': function(up, file, info) {
-                        Flash.create("success", "上传成功："+file.name);
-                        var newRecord = JSON.parse(info).content[0];
-                        $scope.ppts.push(newRecord);
+                        info = JSON.parse(info);
+                        if (info.code === 0) {
+                            Flash.create("success", "上传成功："+file.name);
+                            $scope.ppts.push(info.content[0]);
+                        } else
+                            Flash.create("danger", "上传失败："+file.name);
                         // 每个文件上传成功后,处理相关的事情
                         // 其中 info 是文件上传成功后，服务端返回的json，形式如
                         // {
