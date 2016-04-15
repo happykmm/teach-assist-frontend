@@ -232,6 +232,13 @@
                         "/components/404/404.js"
                     ],
                     serie: true
+                },
+                {
+                    name:"edit",
+                    files:[
+                        "/components/edit/edit.css",
+                        "/components/edit/edit.js"
+                    ]
                 }
             ]
         })
@@ -292,8 +299,18 @@
                 controller: 'courseIntroSched',
                 resolve: {
                     courseIntroSched: function($ocLazyLoad){
+                        return $ocLazyLoad.load(['courseIntroSched'])
+                    }
+                }
+            })
+            .state('course.intro.edit', {
+                url: '/edit',
+                templateUrl: '/components/edit/edit.html',
+                controller: 'edit',
+                resolve: {
+                    edit: function($ocLazyLoad) {
                         return $ocLazyLoad.load(
-                            ['ngCkeditor','courseIntroSched'],
+                            ['ngCkeditor', 'edit'],
                             {serie: true}
                         )
                     }

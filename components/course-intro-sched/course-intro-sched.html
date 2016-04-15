@@ -1,15 +1,17 @@
 <course-intro-sched>
+
     <h1>{{title}}</h1>
-    <button ng-show="users.type==='teacher' && !isEdit" ng-click="isEdit=true">编辑</button>
-    <button ng-show="users.type==='teacher' && isEdit" ng-click="isEdit=false;save()">保存</button>
+    <button ng-show="user.type==='teacher' && state[2]!=='edit'" ui-sref=".edit">编辑</button>
+    <button ng-show="user.type==='teacher' && state[2]==='edit'" ui-sref=".">保存</button>
     <hr/>
-    <p ng-bind-html="content" ng-show="!isEdit"></p>
-    <div ng-show="users.type==='teacher' && isEdit">
-        <!--<textarea ckeditor="editorOptions" ng-model="content"></textarea>-->
-    </div>
-    <div class="no-content" ng-show="contentReady && !content && !isEdit">
+    <p ng-bind-html="content" ng-show="state[2]!=='edit'"></p>
+
+    <div class="no-content" ng-show="isReady && !content && state[2]!=='edit'">
         <i>&#xe605</i>
         <span>无内容</span>
     </div>
+
+    <div ui-view></div>
+
 </course-intro-sched>
 <!--ng-show="!content && !isEdit"-->
