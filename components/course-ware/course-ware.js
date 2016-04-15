@@ -4,7 +4,7 @@
         'flash'
     ]).controller('courseWare', courseWare);
 
-    function courseWare($scope, $http, Flash, $ocLazyLoad) {
+    function courseWare($scope, $http, Flash, $ocLazyLoad, $q) {
 
         $scope.del = function($index) {
             $http({
@@ -23,30 +23,29 @@
             method: 'GET',
             url: 'API/ppt/'+$scope.course_id
         }).then(function(res) {
-            $scope.ppts = res.data.ppt;
+            $scope.ppts = res.data.ppts;
         });
 
         if ($scope.user.type === 'teacher') {
-            $ocLazyLoad.load([
-                'plupload',
-                'Qiniu'
-            ]).then(function() {
+            $q.all([
+                $ocLazyLoad.load(['plupload','Qiniu']),
                 $http({
                     method: 'GET',
                     url: 'API/ppt/token'
                 }).then(function(res) {
-                    qiniuInit(res.data.token);
-                });
+                    $scope.token = res.data.token;
+                })
+            ]).then(function() {
+                qiniuInit();
             });
         }
 
 
-
-        function qiniuInit(token) {
+        function qiniuInit() {
             Qiniu.uploader({
                 runtimes: 'html5,flash,html4',    //上传模式,依次退化
                 browse_button: 'upload-button',       //上传选择的点选按钮，**必需**
-                uptoken: token,
+                uptoken: $scope.token,
                 //unique_names 默认false，key为文件名。若开启该选项，SDK会为每个文件自动生成key（文件名）
                 unique_names: true,
                 //save_key 默认 false。若在服务端生成uptoken的上传策略中指定了 `save_key`，则开启，SDK在前端将不对key进行任何处理
@@ -66,8 +65,8 @@
                 },
                 init: {
                     'FilesAdded': function(up, files) {
-                        plupload.each(files, function(file) {
-                        });
+                        // plupload.each(files, function(file) {
+                        // });
                     },
                     'BeforeUpload': function(up, file) {
                         Flash.create("info", "正在上传"+file.name);
@@ -83,11 +82,7 @@
                         } else
                             Flash.create("danger", "上传失败："+file.name);
                         // 每个文件上传成功后,处理相关的事情
-                        // 其中 info 是文件上传成功后，服务端返回的json，形式如
-                        // {
-                        //    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
-                        //    "key": "gogopher.jpg"
-                        //  }
+                        // 其中 info 是文件上传成功后，服务端返回的json
                         // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
                         // var domain = up.getOption('domain');
                         // var res = parseJSON(info);
