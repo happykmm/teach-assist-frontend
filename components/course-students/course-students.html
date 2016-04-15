@@ -14,15 +14,17 @@
             <a href="">删除</a>
         </span>
         </li>
-        <li>
-        <span>
-            <input type="text" placeholder="添加一个学生..." ng-model="newStudent" ng-keydown="addStudent($event)"/>
-        </span>
-            <span></span>
-        <span ng-click="addStudent()">
-            <i>&#xe603;</i>
-            <a href="">添加(Enter)</a>
-        </span>
+        <li ng-show="user.type==='teacher'">
+            <span>
+                <input type="text" placeholder="添加一个学生..." ng-model="newStudent" ng-keydown="addStudent($event)"/>
+            </span>
+            <span>
+
+            </span>
+            <span ng-click="addStudent()">
+                <i>&#xe603;</i>
+                <a href="">添加(Enter)</a>
+            </span>
         </li>
     </ul>
 </course-students>
