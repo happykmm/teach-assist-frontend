@@ -1,16 +1,21 @@
 <course-intro-sched>
 
     <h1>{{title}}</h1>
-    <button ng-show="user.type==='teacher' && state[2]!=='edit'" ui-sref=".edit">编辑</button>
-    <button ng-show="user.type==='teacher' && state[2]==='edit'" ui-sref=".">保存</button>
+    <button ui-sref=".edit"
+            ng-show="user.type==='teacher' && state[2]!=='edit'" >
+        编辑
+    </button>
+    <button ui-sref="."
+            ng-show="user.type==='teacher' && state[2]==='edit'"
+            ng-click="save()">
+        保存
+    </button>
     <hr/>
     <p ng-bind-html="content" ng-show="state[2]!=='edit'"></p>
-
     <div class="no-content" ng-show="isReady && !content && state[2]!=='edit'">
         <i>&#xe605</i>
         <span>无内容</span>
     </div>
-
     <div ui-view></div>
 
 </course-intro-sched>
