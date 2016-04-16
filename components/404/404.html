@@ -1,15 +1,16 @@
+<style>
+    http404 {
+        display: block;
+        text-align: center;
+    }
+
+    http404 > h1 {
+
+    }
+</style>
+
 <http404>
     <h1>404 NOT FOUND</h1>
     <hr>
-    <div class="ctn">
-        <canvas id="game-canvas" width="600" height="400">
-            404 - Not Found
-        </canvas>
-        <div id="splash">
-            <a href="javascript:void(0)" ng-click="play()" >再来一次！</a>
-            <br/>
-            <a href="javascript:void(0)" target="_blank">还不滚去学习？</a>
-        </div>
-    </div>
-    <span id="fps"></span>
+    <iframe src="/components/404/index.html" width="700px" height="600px" frameborder="0"></iframe>
 </http404>

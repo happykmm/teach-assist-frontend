@@ -225,15 +225,6 @@
                     ]
                 },
                 {
-                    name:"404",
-                    files:[
-                        "/components/404/404.css",
-                        "/components/404/game.js",
-                        "/components/404/404.js"
-                    ],
-                    serie: true
-                },
-                {
                     name:"edit",
                     files:[
                         "/components/edit/edit.css",
@@ -436,13 +427,7 @@
             })
             .state('404', {
                 // no url defined
-                templateUrl: '/components/404/404.html',
-                controller: '404',
-                resolve: {
-                    http404: function($ocLazyLoad){
-                        return $ocLazyLoad.load(['404']);
-                    }
-                }
+                templateUrl: '/components/404/404.html'
             });
     });
 
