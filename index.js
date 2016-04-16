@@ -231,6 +231,12 @@
                         "/components/edit/edit.css",
                         "/components/edit/edit.js"
                     ]
+                },
+                {
+                    name:"404",
+                    files:[
+                        "/components/404/404.js"
+                    ]
                 }
             ]
         })
@@ -431,7 +437,7 @@
                 templateUrl: '/components/404/404.html',
                 resolve: {
                     iframeFocus: function($ocLazyLoad) {
-                        return $ocLazyLoad.load(['iframeFocus']);
+                        return $ocLazyLoad.load(['iframeFocus', '404']);
                     }
                 }
             });
