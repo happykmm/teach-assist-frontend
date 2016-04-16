@@ -9,7 +9,10 @@
         </li>
         <li ng-repeat="ppt in ppts track by $index">
             <h2>
-                <a target="_blank" href="http://7xnvbh.com1.z0.glb.clouddn.com/{{ppt.storename}}">{{ppt.filename}}</a>
+                <a target="_blank"
+                   href="http://7xnvbh.com1.z0.glb.clouddn.com/{{ppt.storename}}?download/{{ppt.filename}}">
+                    {{ppt.filename}}
+                </a>
             </h2>
             <h3>{{ppt.timestamp*1000 | date : 'yyyy/M/d HH:mm' }}</h3>
             <h4 ng-show="user.type==='teacher'">
