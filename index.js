@@ -262,7 +262,7 @@
                 }
             })
             .state('login', {
-                url:'/login',
+                url: '/login{path:/?}',
                 templateUrl: '/components/login/login.html',
                 controller: 'login',
                 resolve:{
@@ -272,7 +272,7 @@
                 }
             })
             .state('courses', {
-                url:'/courses',
+                url:'/courses{path:/?}',
                 templateUrl: '/components/courses/courses.html',
                 controller: 'courses',
                 resolve:{
@@ -282,7 +282,7 @@
                 }
             })
             .state('course', {
-                url:'/courses/:course_id',
+                url:'/courses/:course_id{path:/?}',
                 templateUrl: '/components/course-main/course-main.html',
                 controller: 'courseMain',
                 //reloadOnSearch: false,
@@ -294,7 +294,7 @@
                 redirectTo: 'course.intro'
             })
             .state('course.intro', {
-                url: '/intro',
+                url: '/intro{path:/?}',
                 templateUrl: '/components/course-intro-sched/course-intro-sched.html',
                 controller: 'courseIntroSched',
                 resolve: {
@@ -304,7 +304,7 @@
                 }
             })
             .state('course.intro.edit', {
-                url: '/edit',
+                url: '/edit{path:/?}',
                 templateUrl: '/components/edit/edit.html',
                 controller: 'edit',
                 resolve: {
@@ -317,7 +317,7 @@
                 }
             })
             .state('course.sched', {
-                url: '/sched',
+                url: '/sched{path:/?}',
                 templateUrl: '/components/course-intro-sched/course-intro-sched.html',
                 controller: 'courseIntroSched',
                 resolve: {
@@ -327,7 +327,7 @@
                 }
             })
             .state('course.sched.edit', {
-                url: '/edit',
+                url: '/edit{path:/?}',
                 templateUrl: '/components/edit/edit.html',
                 controller: 'edit',
                 resolve: {
@@ -340,7 +340,7 @@
                 }
             })
             .state('course.teacher', {
-                url: '/teacher',
+                url: '/teacher{path:/?}',
                 templateUrl: '/components/course-teacher/course-teacher.html',
                 controller: 'courseTeacher',
                 resolve: {
@@ -350,7 +350,7 @@
                 }
             })
             .state('course.students', {
-                url: '/students',
+                url: '/students{path:/?}',
                 templateUrl: '/components/course-students/course-students.html',
                 controller: 'courseStudents',
                 resolve: {
@@ -360,7 +360,7 @@
                 }
             })
             .state('course.ware', {
-                url: '/ware',
+                url: '/ware{path:/?}',
                 templateUrl: '/components/course-ware/course-ware.html',
                 controller: 'courseWare',
                 resolve: {
@@ -371,7 +371,7 @@
 
             })
             .state('course.homework', {
-                url: '/homework',
+                url: '/homework{path:/?}',
                 templateUrl: '/components/homework/homework.html',
                 controller: 'homework',
                 resolve: {
@@ -384,7 +384,7 @@
                 }
             })
             .state('course.postList', {
-                url: '/posts',
+                url: '/posts{path:/?}',
                 templateUrl: '/components/post-list/post-list.html',
                 controller: 'postList',
                 resolve: {
@@ -397,7 +397,7 @@
                 }
             })
             .state('course.postDetail', {
-                url: '/posts/:post_id',
+                url: '/posts/:post_id{path:/?}',
                 templateUrl: '/components/post-detail/post-detail.html',
                 controller: 'postDetail',
                 resolve: {
@@ -407,7 +407,7 @@
                 }
             })
             .state('self', {
-                url: '/self',
+                url: '/self{path:/?}',
                 templateUrl: '/components/self/self.html',
                 controller: 'self',
                 resolve: {
@@ -417,7 +417,7 @@
                 }
             })
             .state('self.edit', {
-                url: '/edit',
+                url: '/edit{path:/?}',
                 templateUrl: '/components/edit/edit.html',
                 controller: 'edit',
                 resolve: {
