@@ -248,7 +248,12 @@
     //config router
     app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('', '/');
-        $urlRouterProvider.otherwise('/404');
+
+        $urlRouterProvider.otherwise(function($injector, $location){
+            var state = $injector.get('$state');
+            state.go('404');
+            return $location.path();
+        });
 
         $stateProvider
             .state('main', {
@@ -430,7 +435,7 @@
                 }
             })
             .state('404', {
-                url:'/404',
+                // no url defined
                 templateUrl: '/components/404/404.html',
                 controller: '404',
                 resolve: {
