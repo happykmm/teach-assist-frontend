@@ -18,6 +18,7 @@
             'http://7xpijn.com1.z0.glb.clouddn.com/carousel04.jpg'
         ];
         $scope.user = userService();
+        
     }
 
 })();
