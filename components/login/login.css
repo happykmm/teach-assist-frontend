@@ -75,6 +75,7 @@ login > .wrap > main > input[type=submit] {
     display: block;
     width: 280px;
     height: 40px;
+    box-sizing: border-box;
 }
 
 login > .wrap > main > input[type=text],
