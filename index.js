@@ -110,6 +110,7 @@
 
                 {name:"ellipsis", files:["/directives/ellipsis.js"]},
                 {name:"scrollIntoView", files:["/directives/scroll-into-view.js"]},
+                {name:"iframeFocus", files:["/directives/iframe-focus.js"]},
 
                 {
                     name:"usericon", 
@@ -427,7 +428,12 @@
             })
             .state('404', {
                 // no url defined
-                templateUrl: '/components/404/404.html'
+                templateUrl: '/components/404/404.html',
+                resolve: {
+                    iframeFocus: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(['iframeFocus']);
+                    }
+                }
             });
     });
 
