@@ -36,21 +36,22 @@ main > .carousel > li {
     background: center no-repeat;
 }
 
-main > .carousel > li:nth-child(1) {
-    background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel01.jpg');
-}
-main > .carousel > li:nth-child(2) {
-    background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel02.jpg');
-}
-main > .carousel > li:nth-child(3) {
-    background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel03.jpg');
-}
-main > .carousel > li:nth-child(4) {
-    background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel04.jpg');
-}
+/*main > .carousel > li:nth-child(1) {*/
+    /*background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel01.jpg');*/
+/*}*/
+/*main > .carousel > li:nth-child(2) {*/
+    /*background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel02.jpg');*/
+/*}*/
+/*main > .carousel > li:nth-child(3) {*/
+    /*background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel03.jpg');*/
+/*}*/
+/*main > .carousel > li:nth-child(4) {*/
+    /*background-image: url('http://7xpijn.com1.z0.glb.clouddn.com/carousel04.jpg');*/
+/*}*/
 
 
-main > .carousel > li > div {
+main > .carousel > li > background-image {
+    display: block;
     height: 100%;
     background: center no-repeat;
 }

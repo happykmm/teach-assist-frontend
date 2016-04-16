@@ -111,6 +111,7 @@
                 {name:"ellipsis", files:["/directives/ellipsis.js"]},
                 {name:"scrollIntoView", files:["/directives/scroll-into-view.js"]},
                 {name:"iframeFocus", files:["/directives/iframe-focus.js"]},
+                {name:"backgroundImage", files:["/directives/background-image.js"]},
 
                 {
                     name:"usericon", 

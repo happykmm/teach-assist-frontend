@@ -11,10 +11,9 @@
         rn-carousel-duration="500"
         rn-carousel-controls-allow-loop
         rn-carousel-transition="zoom">
-        <li> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        <li ng-repeat="image in images">
+            <background-image url="image"></background-image>
+        </li>
     </ul>
 
     <ul class="link">

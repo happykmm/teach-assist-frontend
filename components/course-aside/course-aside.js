@@ -10,9 +10,10 @@
             templateUrl: "/components/course-aside/course-aside.html",
             transclude: false,
             scope: {
-                // scope 表示建立独立作用域
-                // @表示取字面值
-                // =表示双向绑定
+                // Isolated Scope
+                // @ Attribute string binding
+                // = Two-way model binding
+                // & Callback method binding
                 user: "=",
                 state: "="
             },
