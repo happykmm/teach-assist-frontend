@@ -65,7 +65,7 @@ login > .wrap > main > .img {
     left: 0;
     width: 144px;
     height: 90px;
-    background: url("http://7xpijn.com1.z0.glb.clouddn.com/beforelogin.gif");
+    background: url("//o5ryrw40v.qnssl.com/beforelogin.gif");
 }
 
 
@@ -96,11 +96,11 @@ login > .wrap > main > input[type=submit] {
 }
 
 login > .wrap > main > .username:focus ~ .img {
-    background: url("http://7xpijn.com1.z0.glb.clouddn.com/username.gif");
+    background: url("//o5ryrw40v.qnssl.com/username.gif");
 }
 
 login > .wrap > main > .password:focus ~ .img {
-    background: url("http://7xpijn.com1.z0.glb.clouddn.com/password.gif");
+    background: url("//o5ryrw40v.qnssl.com/password.gif");
 }
 
 
