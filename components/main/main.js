@@ -19,10 +19,10 @@
         $scope.images = [""];
         $timeout(function() {
             $scope.images = [
-                'http://7xpijn.com1.z0.glb.clouddn.com/carousel01.jpg',
-                'http://7xpijn.com1.z0.glb.clouddn.com/carousel02.jpg',
-                'http://7xpijn.com1.z0.glb.clouddn.com/carousel03.jpg',
-                'http://7xpijn.com1.z0.glb.clouddn.com/carousel04.jpg'
+                '//o5ryrw40v.qnssl.com/carousel01.jpg',
+                '//o5ryrw40v.qnssl.com/carousel02.jpg',
+                '//o5ryrw40v.qnssl.com/carousel03.jpg',
+                '//o5ryrw40v.qnssl.com/carousel04.jpg'
             ];
         }, 0);
         
