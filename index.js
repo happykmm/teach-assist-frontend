@@ -1,6 +1,6 @@
 (function() {
 
-    var DEBUG = false;
+    var DEBUG = true;
 
     var app = angular.module('teachAssist', [
         'LocalStorageModule',
