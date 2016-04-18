@@ -31,7 +31,7 @@
                     if (config.url.match(/^API/)) {
                         config.api = true;
                         config.url = config.url.replace(/^API/,
-                            DEBUG ? "https://localhost:9999" :　"https://teachassist.xyz:9999");
+                            DEBUG ? "https://localhost:9999" :　"https://teachassist.xyz/api");
                         config.headers["x-access-token"] = userService().token;
                     }
                     return config || $q.when(config);
