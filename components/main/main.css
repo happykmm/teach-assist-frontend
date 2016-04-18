@@ -3,6 +3,7 @@ main {
     position: relative;
     top: 0;
     left: 0;
+    min-width: 700px;
 }
 
 main > .logo {
@@ -46,7 +47,7 @@ main > .carousel > li > background-image {
 main > .link {
     margin: 50px auto 50px auto;
     padding: 0;
-    width: 990px;
+    display: block;
     list-style-type: none;
     text-align: center;
     font-size: 0;
