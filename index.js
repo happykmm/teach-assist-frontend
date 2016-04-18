@@ -79,26 +79,26 @@
                 {
                     name:"ngCkeditor",
                     files:[
-                        "//cdn.bootcss.com/ckeditor/4.5.4/ckeditor.js",   //already minimized.
+                        "/bower_components/ckeditor/ckeditor.js",   //already minimized.
                         "/bower_components/ng-ckeditor/ng-ckeditor.min.js"
                     ],
                     serie: true
                 },
                 
-                {name:"plupload", files:["//cdn.bootcss.com/plupload/2.1.8/plupload.full.min.js"]},
+                {name:"plupload", files:["/bower_components/plupload/plupload.full.min.js"]},
                 {name:"Qiniu", files:["/bower_components/qiniu/src/qiniu.min.js"]},
-                {name:"moment", files:["//cdn.bootcss.com/moment.js/2.11.1/moment.min.js"]},
-                {name:"jQuery", files:["//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"]},
-                {name:"dotdotdot", files:["//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"]},
+                {name:"moment", files:["/bower_components/moment/min/moment.min.js"]},
+                {name:"jQuery", files:["/bower_components/jquery/dist/jquery.min.js"]},
+                {name:"dotdotdot", files:["/bower_components/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js"]},
                 
                 {
                     name:"angular-carousel", 
                     files:[
-                        "//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.css",
-                        "//cdn.bootcss.com/angular-carousel/1.0.1/angular-carousel.min.js"
+                        "/bower_components/angular-carousel/dist/angular-carousel.min.css",
+                        "/bower_components/angular-carousel/dist/angular-carousel.min.js"
                     ]
                 },
-                {name:"ngTouch", files:["//cdn.bootcss.com/angular-touch/1.4.8/angular-touch.min.js"]},
+                {name:"ngTouch", files:["/bower_components/angular-touch/angular-touch.min.js"]},
                 {name:"focus-if", files:["/bower_components/ng-focus-if/focusIf.min.js"]},
                 {
                     name:"datePicker", 
