@@ -1,8 +1,8 @@
 (function() {
 
-    var DEBUG = true;
 
     var app = angular.module('teachAssist', [
+        'teachAssist.config',
         'LocalStorageModule',
         'ngSanitize',           //必须在app定义时声明
         'ui.router',
@@ -25,7 +25,7 @@
 
     app.config(function ($httpProvider) {
         //set API baseURL and x-access-token
-        $httpProvider.interceptors.push(function ($q, userService) {
+        $httpProvider.interceptors.push(function ($q, userService, DEBUG) {
             return {
                 'request': function (config) {
                     if (config.url.match(/^API/)) {
