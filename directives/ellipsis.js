@@ -1,10 +1,14 @@
 (function() {
 
     angular.module('ellipsis', [
-        [
-            'jQuery',
-            'dotdotdot'
-        ]
+        {
+            files: [
+                '//cdn.bootcss.com/jquery/2.2.0/jquery.min.js',
+                '//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js'
+            ],
+            serie: true
+        }
+
     ]).directive('ellipsis', ellipsis);
 
     function ellipsis() {
