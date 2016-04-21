@@ -1,7 +1,7 @@
 course-ware {
     display: block;
+    margin-bottom: 100px;
 }
-
 
 
 course-ware > .add > h1 {
@@ -22,8 +22,13 @@ course-ware > .add > #upload-wrap {
 }
 
 course-ware > .add >  #upload-button {
-    display: none;
-
+    display: block;
+    margin-top: 15px;
+    padding: 8px 25px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #69B1F8;
+    color: #fff;
 }
 
 course-ware > .list {
