@@ -4,7 +4,7 @@
         'ngFlash'
     ]).controller('courseWare', courseWare);
 
-    function courseWare($scope, $http, Flash, $ocLazyLoad, $q) {
+    function courseWare($scope, $http, Flash, $ocLazyLoad, $q, $timeout) {
 
         $scope.del = function($index) {
             $http({
@@ -69,7 +69,9 @@
                         // });
                     },
                     'BeforeUpload': function(up, file) {
-                        Flash.create("info", "正在上传"+file.name);
+                        $timeout(function() {
+                            Flash.create("info", "正在上传"+file.name);
+                        }, 0);
                     },
                     'UploadProgress': function(up, file) {
                         // 每个文件上传时,处理相关的事情
