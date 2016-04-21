@@ -1,4 +1,8 @@
-bower_components/
+bower_components/*
+!bower_components/qiniu
+bower_components/qiniu/*
+!bower_components/qiniu/src
+bower_components/qiniu/src/*
 !bower_components/qiniu/src/qiniu.min.js
 .idea/
 *.log
