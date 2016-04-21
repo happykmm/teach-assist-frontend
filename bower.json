@@ -31,7 +31,7 @@
     "jQuery.dotdotdot": "dotdotdot#~1.7.4",
     "angular-carousel": "~1.0.1",
     "plupload": "~2.1.8",
-    "qiniu": "~1.0.9-beta",
+    "qiniu": "~1.0.15-beta",
     "ocLazyLoad": "~1.0.9",
     "angular-ui-router": "ui-router#~0.2.18"
   }
