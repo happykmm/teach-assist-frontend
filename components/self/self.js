@@ -29,7 +29,7 @@
                     intro: $scope.content
                 }
             }).then(function(res) {
-                //nothing to do here
+                $state.go('.');
             })
         };
 

@@ -5,7 +5,7 @@
     <label ui-sref=".edit" ng-show="!state[1]" >
         <i>&#xe602</i>编辑
     </label>
-    <label ui-sref="." ng-show="state[1]==='edit'" ng-click="save()">
+    <label ng-show="state[1]==='edit'" ng-click="save()">
         <i>&#xe603</i>保存
     </label>
 
