@@ -2,7 +2,7 @@
 
     angular.module('courses', [
         'ngAnimate',
-        'flash',
+        'ngFlash',
         [
             'navbar',
             'usericon'

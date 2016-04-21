@@ -1,7 +1,7 @@
 (function() {
 
     angular.module('homeworkMain', [
-        'flash',
+        'ngFlash',
         'ngAnimate',
         'ngSanitize',
         'ngCkeditor',

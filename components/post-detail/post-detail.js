@@ -1,7 +1,7 @@
 (function(){
 
     angular.module('postDetail',[
-        'flash'
+        'ngFlash'
     ]).controller('postDetail', postDetail);
 
     function postDetail($scope,$http,Flash,$location,$anchorScroll,$state,$stateParams){

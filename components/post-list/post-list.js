@@ -1,7 +1,7 @@
 (function() {
 
     angular.module('postList', [
-        'flash',
+        'ngFlash',
         'ngCkeditor'
     ]).controller('postList', postList);
 

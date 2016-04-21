@@ -1,7 +1,7 @@
 (function() {
 
     angular.module('courseWare', [
-        'flash'
+        'ngFlash'
     ]).controller('courseWare', courseWare);
 
     function courseWare($scope, $http, Flash, $ocLazyLoad, $q) {
