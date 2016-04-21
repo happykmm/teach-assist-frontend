@@ -7,7 +7,7 @@
         'ngSanitize',           //必须在app定义时声明
         'ui.router',
         'oc.lazyLoad',
-        'flash'                 //全局alert
+        'ngFlash'                 //全局alert
     ]);
 
 
