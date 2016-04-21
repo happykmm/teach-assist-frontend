@@ -1,6 +1,6 @@
 (function() {
 
-    angular.module("main", [
+    angular.module("mainPage", [
         'teachAssist',
         'ui.router',
         [
@@ -9,9 +9,9 @@
             'usericon',
             'backgroundImage'
         ]
-    ]).controller("main", main);
+    ]).controller("mainPage", mainPage);
 
-    function main($scope, userService, $timeout) {
+    function mainPage($scope, userService, $timeout) {
         
         $scope.user = userService();
         

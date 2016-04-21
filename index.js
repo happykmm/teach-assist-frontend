@@ -129,10 +129,10 @@
                 },
 
                 {
-                    name:"main",
+                    name:"mainPage",
                     files:[
-                        "/components/main/main.css",
-                        "/components/main/main.js"
+                        "/components/main-page/main-page.css",
+                        "/components/main-page/main-page.js"
                     ]
                 },
                 {
@@ -257,11 +257,11 @@
         $stateProvider
             .state('main', {
                 url:'/',
-                templateUrl: '/components/main/main.html',
-                controller: 'main',
+                templateUrl: '/components/main-page/main-page.html',
+                controller: 'mainPage',
                 resolve:{
-                    main: function($ocLazyLoad) {
-                        return $ocLazyLoad.load(["main"])
+                    mainPage: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(["mainPage"])
                     }
                 }
             })

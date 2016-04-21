@@ -1,4 +1,4 @@
-main {
+main-page {
     display: block;
     position: relative;
     top: 0;
@@ -6,14 +6,14 @@ main {
     min-width: 700px;
 }
 
-main > .logo {
+main-page > .logo {
     height: 60px;
     line-height: 60px;
     background: url('//o5ryrw40v.qnssl.com/logo.png') no-repeat left;
     text-align: right;
 }
 
-main > .logo > .login {
+main-page > .logo > .login {
     display: inline-block;
     vertical-align: middle;
     margin-right: 50px;
@@ -26,11 +26,11 @@ main > .logo > .login {
     text-decoration: none;
 }
 
-main > .carousel {
+main-page > .carousel {
     height: 500px;
 }
 
-main > .carousel > li {
+main-page > .carousel > li {
     height: 100%;
     width: 100%;
     display: inline-block;
@@ -38,13 +38,13 @@ main > .carousel > li {
 }
 
 
-main > .carousel > li > background-image {
+main-page > .carousel > li > background-image {
     display: block;
     height: 100%;
     background: center no-repeat;
 }
 
-main > .link {
+main-page > .link {
     margin: 50px auto 50px auto;
     padding: 0;
     display: block;
@@ -53,7 +53,7 @@ main > .link {
     font-size: 0;
 }
 
-main > .link > li {
+main-page > .link > li {
     display: inline-block;
     border-right: 1px solid #666;
     padding: 0 10px;
@@ -61,13 +61,13 @@ main > .link > li {
     color: #666;
 }
 
-main > .link > li:last-child,
-main > .link > li:first-child {
+main-page > .link > li:last-child,
+main-page > .link > li:first-child {
     border-right: 0;
     padding-right: 0;
 }
 
-main > .link > li > a {
+main-page > .link > li > a {
     font-size: 12px;
     color: #10ae58;
     text-decoration: none;
