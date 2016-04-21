@@ -68,7 +68,7 @@
             }).then(function(res){
                 Flash.create('success','删除帖子成功!');
                 $location.replace();
-                $state.go("course.posts");
+                $state.go("course.postList");
             })
         };
 
