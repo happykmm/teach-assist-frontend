@@ -86,7 +86,7 @@
                 },
 
                 {name:"plupload", files:["//cdn.bootcss.com/plupload/2.1.8/plupload.full.min.js"]},
-                {name:"Qiniu", files:["/bower_components/qiniu/src/qiniu.min.js"]},
+                {name:"Qiniu", files:["/bower_components/qiniu/dist/qiniu.min.js"]},
                 {name:"moment", files:["//cdn.bootcss.com/moment.js/2.11.1/moment.min.js"]},
                 {name:"jQuery", files:["//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"]},
                 {name:"dotdotdot", files:["//cdn.bootcss.com/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js"]},
