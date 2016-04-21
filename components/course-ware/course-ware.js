@@ -51,7 +51,7 @@
                 //save_key 默认 false。若在服务端生成uptoken的上传策略中指定了 `save_key`，则开启，SDK在前端将不对key进行任何处理
                 //save_key: false,
                 //domain为bucket 域名，下载资源时用到，**必需**
-                domain: 'http://7xnvbh.com1.z0.glb.clouddn.com',
+                domain: 'https://o5z2rsfir.qnssl.com',
                 container: 'upload-wrap',           //上传区域DOM ID，默认是browser_button的父元素，
                 max_file_size: '100mb',           //最大文件体积限制
                 flash_swf_url: '/bower_components/plupload/js/Moxie.swf',  //引入flash,相对路径
