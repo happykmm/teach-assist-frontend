@@ -69,9 +69,7 @@
                         // });
                     },
                     'BeforeUpload': function(up, file) {
-                        $timeout(function() {
-                            Flash.create("info", "正在上传"+file.name);
-                        }, 0);
+                        alert("info", "正在上传"+file.name);
                     },
                     'UploadProgress': function(up, file) {
                         // 每个文件上传时,处理相关的事情
@@ -79,10 +77,10 @@
                     'FileUploaded': function(up, file, info) {
                         info = JSON.parse(info);
                         if (info.code === 0) {
-                            Flash.create("success", "上传成功："+file.name);
+                            alert("success", "上传成功："+file.name);
                             $scope.ppts.push(info.content[0]);
                         } else
-                            Flash.create("danger", "上传失败："+file.name);
+                            alert("danger", "上传失败："+file.name);
                         // 每个文件上传成功后,处理相关的事情
                         // 其中 info 是文件上传成功后，服务端返回的json
                         // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
@@ -102,6 +100,12 @@
                     }
                 }
             });
+        }
+        
+        function alert(type, message) {
+            $timeout(function() {
+                Flash.create(type, message);
+            }, 0);
         }
 
     } //end of controller
