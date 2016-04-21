@@ -5,8 +5,7 @@
             ng-show="user.type==='teacher' && state[2]!=='edit'" >
         编辑
     </button>
-    <button ui-sref="."
-            ng-show="user.type==='teacher' && state[2]==='edit'"
+    <button ng-show="user.type==='teacher' && state[2]==='edit'"
             ng-click="save()">
         保存
     </button>

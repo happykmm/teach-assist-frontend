@@ -30,7 +30,7 @@
                 url: "API/courses/"+$scope.course_id+"/"+$scope.state[1],
                 data: data
             }).then(function(res) {
-                //nothing to do here
+                $state.go('course.'+$scope.state[1]);
             })
         }
         
