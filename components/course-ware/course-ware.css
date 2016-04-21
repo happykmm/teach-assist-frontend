@@ -20,6 +20,10 @@ course-ware > .add > #upload-wrap {
     color: #666;
 }
 
+course-ware > .add > #upload-wrap > div {
+    display: none;
+}
+
 course-ware > .add >  #upload-button {
     display: block;
     margin-top: 15px;
