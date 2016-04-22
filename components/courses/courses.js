@@ -1,6 +1,7 @@
 (function() {
 
     angular.module('courses', [
+        'teachAssist',
         'ngAnimate',
         'ngFlash',
         [
@@ -9,9 +10,9 @@
         ]
     ]).controller('courses', courses);
 
-    function courses($scope, $http, localStorageService, Flash, $state){
+    function courses($scope, $http, userService, Flash, $state){
 
-        $scope.users = localStorageService.get("users");
+        $scope.user = userService();
         $scope.newName = "";
 
         $scope.showDetail = function(course_id) {
