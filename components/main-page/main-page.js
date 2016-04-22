@@ -23,9 +23,8 @@
                 '//o5ryrw40v.qnssl.com/carousel02.jpg',
                 '//o5ryrw40v.qnssl.com/carousel03.jpg',
                 '//o5ryrw40v.qnssl.com/carousel04.jpg'
-            ];
+            ];        
         }, 0);
-        
     }
 
 })();

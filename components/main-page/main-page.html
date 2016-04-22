@@ -11,8 +11,8 @@
         rn-carousel-duration="500"
         rn-carousel-controls-allow-loop
         rn-carousel-transition="zoom">
-        <li ng-repeat="image in images">
-            <background-image url="image"></background-image>
+        <li ng-repeat="image in images" >
+            <div ng-style="{'background-image': 'url('+image+')'}"></div>
         </li>
     </ul>
 
