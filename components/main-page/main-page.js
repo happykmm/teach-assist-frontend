@@ -6,8 +6,7 @@
         [
             'ngTouch',
             'angular-carousel',
-            'usericon',
-            'backgroundImage'
+            'usericon'
         ]
     ]).controller("mainPage", mainPage);
 
