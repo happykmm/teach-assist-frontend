@@ -103,9 +103,9 @@
         }
         
         function alert(type, message) {
-            $timeout(function() {
+            $scope.$apply(function() {
                 Flash.create(type, message);
-            }, 0);
+            });
         }
 
     } //end of controller
